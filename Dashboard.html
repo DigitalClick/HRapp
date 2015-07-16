@@ -53,6 +53,8 @@
                     $.each(data.message.body, function () {
                         $("#month").append($("<option/>").val(this).text(this));
                     });
+                    LoadWeek(document.getElementById("month"));
+                    LoadGrid();
                 },
                 error: function (request, status, error) {
                     //alert(1);
@@ -169,7 +171,11 @@
                     ];
 
                     var ctx = document.getElementById("chart-area").getContext("2d");
-                    window.myPie = new Chart(ctx).Pie(pieData);
+                    new Chart(ctx).Pie(pieData);
+                    var barData = { labels: ['Italy', 'UK', 'USA', 'Germany', 'France', 'Japan'], datasets: [{ label: '2010 customers #', fillColor: '#382765', data: [2500, 1902, 1041, 610, 1245, 952] }, { label: '2014 customers #', fillColor: '#7BC225', data: [3104, 1689, 1318, 589, 1199, 1436] }] };
+                    var context = document.getElementById("clients").getContext("2d");                    
+                    var clientsChart = new Chart(context).Bar(barData);
+
 
                 },
                 error: function (data) {
@@ -200,7 +206,9 @@
                 <li class="video-icon-small"><a href="videos.html" class="close-panel">Videos</a></li>
                 <li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
                 <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
+                <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li> 
                 <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Dashboard.html')" class="close-panel">Dashboard</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Maps.html')" class="close-panel">Maps</a></li>
             </ul>
         </nav>
     </div>
@@ -226,7 +234,9 @@
                             </div>
                             <div id="canvas-holder">
                                 <canvas id="chart-area" width="300" height="300" />
+                                
                             </div>
+                            <canvas id="clients" width="300" height="400" />
                         </div>
                     </div>
                 </div>

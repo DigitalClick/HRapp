@@ -128,8 +128,16 @@
     <Content Include="css\img\ui-icons_454545_256x240.png" />
     <Content Include="css\img\ui-icons_888888_256x240.png" />
     <Content Include="css\img\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\jqvmap.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\swipebox.css" />
+    <Content Include="Login.html" />
+    <Content Include="js\jquery-jvectormap-in-mill-en.js" />
+    <Content Include="js\jquery.vmap.js" />
+    <Content Include="js\jquery.vmap.sampledata.js" />
+    <Content Include="js\jquery.vmap.world.js" />
+    <Content Include="Maps.html" />
+    <Content Include="QuickLink.html" />
     <Content Include="images\apple-touch-icon.png" />
     <Content Include="images\apple-touch-startup-image-320x460.png" />
     <Content Include="images\apple-touch-startup-image-640x920.png" />
