@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/framework7.css">
     <link rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
-    <link type="text/css" rel="stylesheet" href="css/jquery-jvectormap-2.0.2.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -28,6 +27,37 @@
     </script>
 </head>
 <body id="mobile_wrap">
+    <script type="text/javascript">
+
+    function onDeviceReady() {
+        console.log("Device is ready");
+    }
+
+    function recognizeSpeech() {
+        var maxMatches = 1;
+        var promptString = "Speak now"; // optional
+        var language = "en-US";                     // optional
+        window.plugins.speechrecognizer.startRecognize(function (result) {
+            //alert(result);
+            $("#txtVoice").val(result);
+        }, function (errorMessage) {
+            console.log("Error message: " + errorMessage);
+        }, maxMatches, promptString, language);
+    }
+
+    // Show the list of the supported languages
+    function getSupportedLanguages() {
+        window.plugins.speechrecognizer.getSupportedLanguages(function (languages) {
+            // display the json array
+            alert(languages);
+        }, function (error) {
+            alert("Could not retrieve the supported languages : " + error);
+        });
+    }
+
+    document.addEventListener("deviceready", onDeviceReady, true);
+    </script>
+
     <div class="statusbar-overlay"></div>
 
     <div class="panel-overlay"></div>
@@ -64,7 +94,8 @@
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
                         <div id="pages_maincontent">
-                            <div id="map" style="width: 400px; height: 400px;"></div>
+                            <button onclick="recognizeSpeech();">Start recognition</button>     
+                            <textarea id="txtVoice" name="txtVoice"></textarea>
                         </div>
                     </div>
                 </div>
@@ -72,8 +103,6 @@
 
         </div>
     </div>
-
-
     <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
     <script src="js/jquery.validate.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery.swipebox.js"></script>
@@ -81,34 +110,6 @@
     <script type="text/javascript" src="js/email.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-    <script type="text/javascript" src="js/jquery-jvectormap-2.0.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-jvectormap-in-mill-en.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#map').vectorMap({
-                map: 'in_mill_en',
-                zoomAnimate: false,
-                hoverOpacity: 0.7,
-                hoverColor: true,
-                markersSelectable: true,
-                markersSelectableOne: true,
-                backgroundColor: '#383f47',
-                markers: [
-                 { latLng: [28.6139, 77.2090], name: 'Delhi' },
-                 { latLng: [18.9750, 72.8258], name: 'Mumbai' },
-                 { latLng: [18.3113, 73.5124], name: 'Pune' },
-                 { latLng: [12.9697, 77.5667], name: 'Bangalore' },
-                 { latLng: [17.3700, 78.4800], name: 'Hyderbad' },
-                 { latLng: [13.0827, 80.2707], name: 'Chennali' }
-                ],
-                onMarkerClick: function (e, code) {
-                    alert(code);
-                }
-            });          
-        });
-    </script>
-
-
 </body>
 
 </html>

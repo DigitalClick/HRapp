@@ -5,30 +5,30 @@
 (function () {
     "use strict";
 
-    document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
-    function onSucess(data){
-        document.getElementById("picBox").src=data;
-    };
-    function onFail(data) {
+    //document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
+    //function onSucess(data){
+    //    //document.getElementById("picBox").src=data;
+    //};
+    //function onFail(data) {
        
-    };
-    function onDeviceReady() {
-        // Handle the Cordova pause and resume events
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        document.getElementById("CamIcon").addEventListener("click", function () {
-            navigator.camera.getPicture(onSucess, onFail, {
-                quality: 75,
-                destinationType: Camera.DestinationType.FILE_URI,
-                sourceType: Camera.PictureSourceType.CAMERA,
-                encodingType: Camera.EncodingType.JPEG,
-                saveToPhotoAlbum: true
-            });
-        });
+    //};
+    //function onDeviceReady() {
+    //    // Handle the Cordova pause and resume events
+    //    document.addEventListener( 'pause', onPause.bind( this ), false );
+    //    document.addEventListener( 'resume', onResume.bind( this ), false );
+    //    document.getElementById("CamIcon").addEventListener("click", function () {
+    //        navigator.camera.getPicture(onSucess, onFail, {
+    //            quality: 75,
+    //            destinationType: Camera.DestinationType.FILE_URI,
+    //            sourceType: Camera.PictureSourceType.CAMERA,
+    //            encodingType: Camera.EncodingType.JPEG,
+    //            saveToPhotoAlbum: true
+    //        });
+    //    });
             
     
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-    };
+    //    // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+    //};
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.

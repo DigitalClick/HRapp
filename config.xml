@@ -3,7 +3,7 @@
   <name>HR</name>
   <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team </author>
-  <content src="Login.html" />
+  <content src="index.html" />
   <access origin="*" />
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="8.0" />
@@ -11,6 +11,6 @@
   <preference name="Fullscreen" value="false" />
   <preference name="ShowTitle" value="False" />
   <preference name="Orientation" value="portrait" />
-  <vs:plugin name="org.apache.cordova.camera" version="0.3.2" />
+  <vs:plugin name="com.phonegap.plugins.speech" version="1.0.0" />
   <vs:platformSpecificValues />
 </widget>
