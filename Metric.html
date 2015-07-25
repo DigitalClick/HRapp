@@ -1,0 +1,181 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+    <title>Digital You</title>
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css' />    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+     
+    <style type="text/css">
+        .Table {
+        display: table;
+        border: 0px;
+        }
+
+    .Title {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+
+    .Heading {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .Row {
+        display: table-row;
+    }
+
+    .Cell {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    </style>
+
+    <script type="text/javascript">
+        function Loadurl(url) {
+            window.location.replace(url);
+        }
+        function LoadGraphPage(metricName) {
+            window.localStorage.setItem("MetricName", metricName);
+            window.location.replace("Chart.html");
+        }
+
+    </script>
+
+
+
+
+
+
+</head>
+<body id="mobile_wrap">
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+        <nav class="list-nav-small">
+            <ul>
+                <li class="home-icon-small"><a href="index.html" class="close-panel">Home</a></li>
+                <li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>
+                <li class="features-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
+                <li class="photos-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
+                <li class="video-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
+                <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
+                <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Dashboard.html')" class="close-panel">Dashboard</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Maps.html')" class="close-panel">Maps</a></li>-->
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages">
+                <div data-page="projects" class="page no-toolbar no-navbar">
+                    <div class="page-content">
+                        <div class="navbarpages">
+                            <div class="navbar_home_link"><a href="index.html"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
+                            <div class="navbar_page_center">Mertic</div>
+                            <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
+                        </div>
+                        <div id="pages_maincontent">
+                            <h2 class="page_subtitle">Growth</h2>
+                            <div class="page_single" onclick="LoadGraphPage('Growth')">
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link active button">Overall</a>
+                                    <a href="#" class="tab-link active button">Employee</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">11.3%</a>
+                                    <a href="#" class="tab-link button">15.3%</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button" style="background-color: green;"></a>
+                                    <a href="#" class="tab-link button" style="background-color: green;"></a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">10.5%</a>
+                                    <a href="#" class="tab-link button">15%</a>
+                                </div>
+                            </div>
+                            <h2 class="page_subtitle">Diversity</h2>
+                            <div class="page_single" onclick="LoadGraphPage('Diversity')">
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link active button">Men</a>
+                                    <a href="#" class="tab-link active button">Women</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">72.0%</a>
+                                    <a href="#" class="tab-link button">28.0%</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button" style="background-color: red;"></a>
+                                    <a href="#" class="tab-link button" style="background-color: red;"></a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">70.0%</a>
+                                    <a href="#" class="tab-link button">30.0%</a>
+                                </div>
+                            </div>
+                            <h2 class="page_subtitle">Attrition</h2>
+                            <div class="page_single" onclick="LoadGraphPage('Attrition')">
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link active button">Un Planned</a>
+                                    <a href="#" class="tab-link active button">Planned</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">12.0%</a>
+                                    <a href="#" class="tab-link button">5.0%</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button" style="background-color: green;"></a>
+                                    <a href="#" class="tab-link button" style="background-color: red;"></a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">13.0%</a>
+                                    <a href="#" class="tab-link button">4.5%</a>
+                                </div>
+                            </div>
+                            <h2 class="page_subtitle">On Boarders</h2>
+                            <div class="page_single" onclick="LoadGraphPage('OnBoarders')">
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link active button">On Boarders</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">2109</a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button" style="background-color: green;"></a>
+                                </div>
+                                <div class="buttons-row">
+                                    <a href="#" class="tab-link button">1895</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+      
+</body>
+</html>

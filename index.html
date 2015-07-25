@@ -12,13 +12,17 @@
     <link rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="JS/jquery.min.js" type="text/javascript"></script>
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
     <script src="scripts/index.js"></script>   
 
-    <script type="text/javascript">
+    <script type="text/javascript">      
+        function LoadName()
+        {          
+            $("#lblUserName").text(window.localStorage.getItem("Username"));            
+        }  
         function Loadurl(url) {
 
             window.location.replace(url);
@@ -26,14 +30,16 @@
     </script>
 
 </head>
-<body id="mobile_wrap">
+<body id="mobile_wrap" onload="LoadName()">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
     <div class="panel panel-left panel-cover">
         <nav class="list-nav-small">
             <ul>
+                <li class="home-icon-small"><span id="lblUserName"></span></li>
                 <li class="home-icon-small"><a href="index.html" class="close-panel">Home</a></li>
-                <li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>
+                <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
+                <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
                 <li class="features-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
                 <li class="photos-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
                 <li class="video-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>              
@@ -98,20 +104,19 @@
 
                         <div class="minimal_intro">
                             <span>Smart HR</span> <br />
-                            - Always<br />
-                            connected <br />
+                            Always connected <br />                            
                         </div>
                         <nav class="list-nav">
                             <ul>
                                 <!--<li class="about-icon"><a href="#" data-popup=".popup-login" class="open-popup">Login</a></li>-->
                                 <!--<li class="about-icon"><a href="#" data-popup=".popup-products" class="open-popup">Products</a></li>-->
-                                <li class="about-icon"><a href="MyOffice.html">MyOffice</a></li>
-                                <li class="heart-icon"><a href="AroundME.html">AroundME</a></li>
-                                <li class="tools-icon"><a href="AboutME.html">AboutME</a></li>
+                                <li class="myoffice-icon"><a href="MyOffice.html">MyOffice</a></li>
+                                <li class="aroundme-icon"><a href="AroundME.html">AroundME</a></li>
+                                <li class="aboutme-icon"><a href="AboutME.html">AboutME</a></li>
                                 <!--<li class="lock-icon"><a href="#" data-panel="right" class="open-panel">Account</a></li>-->
-                                <li class="blog-icon"><a href="#" onclick="Loadurl('Dashboard.html')">Dashboard</a></li>
-                                <li class="photos-icon"><a href="Events.html">Events</a></li>
-                                <li class="contact-icon"><a href="Enablers.html">Enablers</a></li>
+                                <li class="dashboard-icon"><a href="#" onclick="Loadurl('Dashboard.html')">Dashboard</a></li>
+                                <li class="events-icon"><a href="Events.html">Events</a></li>
+                                <li class="enablers-icon"><a href="Enablers.html">Enablers</a></li>
                             </ul>
                         </nav>
 
@@ -186,7 +191,7 @@
     </div>-->
 
 
-    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>-->
     <script src="js/jquery.validate.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
