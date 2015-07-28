@@ -247,9 +247,9 @@ a.button_small {
                 margin: 2% 0 2% 8%;
                 height: auto;
                 background-color: #461438;
-                opacity: 0.7;
-                 ;
+                opacity: 0.9;
             }
+
 
 .list-nav-small {
     padding: 20px 5%;
@@ -386,7 +386,7 @@ a.button_small {
 }
 
 .dashboard-icon a {
-    background: url(images/icons/white/Dashboard.png);
+    background: url(images/icons/white/Dashboard1.png);
     background-size: auto 60%;
     background-repeat: no-repeat;
     background-position: 50% 25px;
@@ -435,11 +435,26 @@ a.button_small {
 }
 
 .home-icon-small {
-    background: url(images/icons/white/home.png);
-    background-size: auto 70%;
+    background: url(images/icons/white/home_menu.png);
+    background-size: auto 80%;
     background-repeat: no-repeat;
     background-position: 10px 50%;
 }
+
+.user-icon-small {
+    background: url(images/icons/white/AboutMe.png);
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.quicklink-icon-small {
+    background: url(images/icons/white/QuickLinks.png);
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
 
 .about-icon-small {
     background: url(images/icons/white/about.png);
@@ -470,8 +485,8 @@ a.button_small {
 }
 
 .contact-icon-small {
-    background: url(images/icons/white/contact.png);
-    background-size: auto 50%;
+    background: url(images/icons/white/contacts.png);
+    background-size: auto 80%;
     background-repeat: no-repeat;
     background-position: 10px 50%;
 }
@@ -540,7 +555,7 @@ a.button_small {
 }
 
 .dashboard-icon-small {
-    background: url(images/icons/white/Dashboard.png);
+    background: url(images/icons/white/Dashboard1.png);
     background-size: auto 50%;
     background-repeat: no-repeat;
     background-position: 10px 50%;
@@ -582,10 +597,17 @@ a.button_small {
 }
 
 .locations-icon-small {
-    background: url(images/icons/white/compass.png);
-    background-size: auto 50%;
+    background: url(images/icons/white/Location.png);
+    background-size: auto 80%;
     background-repeat: no-repeat;
-    background-position: 10px 10px;
+    background-position: 10px 50%;
+}
+
+.communities-icon-small {
+    background: url(images/icons/white/Communities.png);
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
 }
 /*===============================================*/
 /* 5. TOP NAVIGATION BAR AND FOOTER TOOLBAR */
@@ -655,6 +677,16 @@ a.button_small {
 }
 
 .navbar_home_link img {
+    max-width: 20%;
+}
+
+.navbar_back_link a {
+    float: left;
+    width: 30%;
+    padding: 1% 0 0 3%;
+}
+
+.navbar_back_link img {
     max-width: 20%;
 }
 
@@ -871,10 +903,11 @@ ul.features_list {
         ul.features_list li span {
             display: inline-block;
             max-width: 90%;
-            padding: 5px 0 0 10%;
+            padding: 4% 0 0 5%;
             font-weight: 700;
             float: left;
             color: #ffffff;
+            vertical-align:middle;
         }
 
 
@@ -1153,7 +1186,7 @@ ul.photo_gallery_11 {
     .post_details h2 {
         font-size: 16px;
         line-height: 18px;
-        font-weight: 400;
+        font-weight: bold;
         margin: 0px 0 10px 0;
         padding: 0px;
     }
@@ -1497,6 +1530,7 @@ ul.comments {
         .custom-accordion .accordion-item-toggle span {
             display: inline-block;
             margin-left: 15px;
+            font-weight: bold;
         }
 
     .custom-accordion .icon-plus, .custom-accordion .icon-minus {
@@ -1589,6 +1623,16 @@ ul.comments {
     }
 
     .navbar_home_link img {
+        max-width: 40%;
+    }
+
+    .navbar_back_link a {
+        float: left;
+        width: 23%;
+        padding: 15px 0 0 3%;
+    }
+
+    .navbar_back_link img {
         max-width: 40%;
     }
 

@@ -27,6 +27,11 @@
             height: 12px;
             margin-right: 5px;
         }
+
+        .chart-legend li {
+            display: inline;
+            padding: 0px 0px 0px 5px;
+        }
     </style>
     <script type="text/javascript" src="JS/jquery.min.js"></script>
     <script type="text/javascript" src="js/Chart.js"></script>
@@ -151,8 +156,8 @@
             //    },
             //    error: function (data) {
             //        alert(data.message.header.responseMessage);
-            //    }            
-            var pieData, lineData, barData, barCityData, barIGData;
+            //    }
+            var pieData, lineData, barData, barCityData, barIGData, delhiMapData, mumbaiMapData, chennaiMapData;
             $("#metricName").append(window.localStorage.getItem("MetricName"));
             if (window.localStorage.getItem("MetricName") == "Attrition") {
                 pieData = [
@@ -217,6 +222,37 @@
                         }
                     ]
                 };
+                delhiMapData = "<div style='display:table'>" +
+                               "<div style='display:table-row'>" +
+                                  "<div style='display:table-cell'>Planned</div>" +
+                                  "<div style='display:table-cell'>4.0</div>" +
+                              "</div>" +
+                              "<div style='display:table-row'>" +
+                                  "<div style='display:table-cell'>Un Planned</div>" +
+                                  "<div style='display:table-cell'>12.4</div>" +
+                              "</div>" +
+                          "</div>";
+                mumbaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Planned</div>" +
+                                    "<div style='display:table-cell'>5.3</div>" +
+                                "</div>" +
+                                "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Un Planned</div>" +
+                                    "<div style='display:table-cell'>12</div>" +
+                                "</div>" +
+                            "</div>";
+                chennaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Planned</div>" +
+                                    "<div style='display:table-cell'>5</div>" +
+                                "</div>" +
+                                "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Un Planned</div>" +
+                                    "<div style='display:table-cell'>12.1</div>" +
+                                "</div>" +
+                            "</div>";
+
                 barCityData = {
                     labels: ["Chennai", "Mumbai", "Delhi"],
                     datasets: [
@@ -345,6 +381,36 @@
                         }
                     ]
                 };
+                delhiMapData = "<div style='display:table'>" +
+                              "<div style='display:table-row'>" +
+                                 "<div style='display:table-cell'>Employee</div>" +
+                                 "<div style='display:table-cell'>14.9</div>" +
+                             "</div>" +
+                             "<div style='display:table-row'>" +
+                                 "<div style='display:table-cell'>Contractor</div>" +
+                                 "<div style='display:table-cell'>6.6</div>" +
+                             "</div>" +
+                         "</div>";
+                mumbaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Employee</div>" +
+                                    "<div style='display:table-cell'>15.7</div>" +
+                                "</div>" +
+                                "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Contractor</div>" +
+                                    "<div style='display:table-cell'>7.0</div>" +
+                                "</div>" +
+                            "</div>";
+                chennaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Employee</div>" +
+                                    "<div style='display:table-cell'>13.0</div>" +
+                                "</div>" +
+                                "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Contractor</div>" +
+                                    "<div style='display:table-cell'>5.5</div>" +
+                                "</div>" +
+                            "</div>";
                 barIGData = {
                     labels: ["BFSI", "Telecom", "Public Services", "Retail"],
                     datasets: [
@@ -435,6 +501,24 @@
                         }
                     ]
                 };
+                delhiMapData = "<div style='display:table'>" +
+                             "<div style='display:table-row'>" +
+                                "<div style='display:table-cell'>Women</div>" +
+                                "<div style='display:table-cell'>27.2</div>" +
+                            "</div>" +                           
+                        "</div>";
+                mumbaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Women</div>" +
+                                    "<div style='display:table-cell'>31.1</div>" +
+                                "</div>" +                               
+                            "</div>";
+                chennaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Women</div>" +
+                                    "<div style='display:table-cell'>29.0</div>" +
+                                "</div>" +                              
+                            "</div>";
                 barIGData = {
                     labels: ["BFSI", "Telecom", "Public Services", "Retail"],
                     datasets: [
@@ -449,7 +533,7 @@
                     ]
                 };
             }
-            if (window.localStorage.getItem("MetricName") == "OnBoarders") {
+            if (window.localStorage.getItem("MetricName") == "On Boarders") {
                 pieData = [
                       {
                           value: 1122,
@@ -517,6 +601,24 @@
                         }
                     ]
                 };
+                delhiMapData = "<div style='display:table'>" +
+                           "<div style='display:table-row'>" +
+                              "<div style='display:table-cell'>Women</div>" +
+                              "<div style='display:table-cell'>149</div>" +
+                          "</div>" +
+                      "</div>";
+                mumbaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Women</div>" +
+                                    "<div style='display:table-cell'>1103</div>" +
+                                "</div>" +
+                            "</div>";
+                chennaiMapData = "<div style='display:table'>" +
+                                 "<div style='display:table-row'>" +
+                                    "<div style='display:table-cell'>Women</div>" +
+                                    "<div style='display:table-cell'>587</div>" +
+                                "</div>" +
+                            "</div>";
                 barIGData = {
                     labels: ["BFSI", "Telecom", "Public Services", "Retail"],
                     datasets: [
@@ -559,6 +661,27 @@
             var myLineIGChart = new Chart(document.getElementById("barIGChart").getContext("2d")).Bar(barIGData, options);
             $("#legendIGBar").append(myLineIGChart.generateLegend());
 
+
+            new Maplace({
+                view_all: false,
+                locations: [{
+                    lat: 28.6139,
+                    lon: 77.2090,
+                    html: delhiMapData
+                }, {
+                    lat: 18.9750,
+                    lon: 72.8258,
+                    html: mumbaiMapData
+                }, {
+                    lat: 13.0827,
+                    lon: 80.2707,
+                    html: chennaiMapData
+                }
+                ],
+                controls_on_map: false
+
+            }).Load();
+
             //});
         }
         function Loadurl(url) {
@@ -566,20 +689,25 @@
             window.location.replace(url);
         }
 
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
+        }
     </script>
 
 </head>
-<body id="mobile_wrap">
+<body id="mobile_wrap" onload="LoadName()">
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
     <div class="panel panel-left panel-cover">
         <nav class="list-nav-small">
             <ul>
+                <li class="user-icon-small"><span id="lblUserName"></span></li>
                 <li class="home-icon-small"><a href="index.html" class="close-panel">Home</a></li>
-                <li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>
-                <li class="features-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
-                <li class="photos-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
-                <li class="video-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
+                <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
+                <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
+                <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>  
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
                 <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
                 <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
@@ -594,7 +722,7 @@
                 <div data-page="projects" class="page no-toolbar no-navbar">
                     <div class="page-content">
                         <div class="navbarpages">
-                            <div class="navbar_home_link"><a href="Metric.html"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
+                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('Metric.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
                             <div class="navbar_page_center" id="metricName"></div>
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
@@ -603,44 +731,69 @@
                             <select id="week" onchange="LoadGrid()"></select>-->
                             <!--<div id="gridView">
                             </div>-->
+                            <div class="buttons-row">
+                                <a href="#" class="tab-link active button">Pie Chart</a>
+                            </div>
                             <div id="canvas-holder">
-                                <canvas id="pieChart" width="300" height="400" />
+                                <canvas id="pieChart" width="300" height="350" />
                             </div>
                             <div id="legendPie" class="chart-legend"></div>
+                            <div class="buttons-row">
+                                <a href="#" class="tab-link active button">Line Chart</a>
+                            </div>
                             <div id="canvas-holder">
                                 <canvas id="lineChart" width="300" height="400" />
                             </div>
                             <div id="legendLine" class="chart-legend"></div>
+                            <div class="buttons-row">
+                                <a href="#" class="tab-link active button">Bar Chart</a>
+                            </div>
                             <div id="canvas-holder">
                                 <canvas id="barChart" width="300" height="400" />
                             </div>
                             <div id="legendBar" class="chart-legend"></div>
+                            <div class="buttons-row">
+                                <a href="#" class="tab-link active button">Bar Chart</a>
+                            </div>
                             <div id="canvas-holder">
                                 <canvas id="barCityChart" width="300" height="400" />
                             </div>
                             <div id="legendCityBar" class="chart-legend"></div>
+                            <div class="buttons-row">
+                                <a href="#" class="tab-link active button">Bar Chart</a>
+                            </div>
                             <div id="canvas-holder">
                                 <canvas id="barIGChart" width="300" height="400" />
                             </div>
                             <div id="legendIGBar" class="chart-legend"></div>
+                            <div class="buttons-row">
+                                <a href="#" class="tab-link active button">Map View</a>
+                            </div>
+                            <div id="canvas-holder">
+                                <div id="gmap" style="width: 300px;height:350px; padding: 10px 0 0 0;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="js/jquery.swipebox.js"></script>
-    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="js/email.js"></script>
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            LoadGrid();
-        });
-    </script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <!--<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>-->
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/jquery.swipebox.js"></script>
+        <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+        <script type="text/javascript" src="js/email.js"></script>
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+        <script type="text/javascript" src="js/my-app.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.7">
+        </script>
+        <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+        <script src="js/maplace-0.1.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                LoadGrid();
+            });
+        </script>
 
 </body>
 </html>
