@@ -34,7 +34,12 @@
             max-width: 100%;
             text-align: left;
         }
-
+         .headercolumn {
+            display: table-cell;
+             width:18%;
+            text-align: center;
+            font-weight: bold;
+        }         
         .rowMetric {
             display: table-row;
         }
@@ -42,7 +47,7 @@
         .cellMetric {
             display: table-cell;
             border: 0;
-            width: 40%;
+            width: 35%;
             font-size: 16px;
             padding: 0px 0 0 10px;
             vertical-align: middle;
@@ -51,7 +56,7 @@
         .cellMetricNo {
             display: table-cell;
             border: 0;
-            width: 20%;
+            width: 18%;
             font-size: 16px;
             padding: 0px 0 0 10px;
             vertical-align: middle;
@@ -60,10 +65,9 @@
         .cellMetricImg {
             display: table-cell;
             border: 0;
-            width: 20%;
-            font-size: 16px;
-            padding: 0px 0 0 10px;
+            width: 18%;                    
             vertical-align: middle;
+            text-align: center;
         }
 
         .cellMetric span {
@@ -74,13 +78,32 @@
             text-align: center;
             vertical-align: middle;
         }
-
         .metricRAG {
             max-width: 40%;
             max-height: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .mapImg {
+            max-width: 100%;
+            max-height: 100%;
             text-align: right;
             vertical-align: middle;
-            padding: 10px 0 0 0;
+            padding: 0 0 0 0;
+        }
+
+        .cell.empty {
+            border: none;
+            width: 11%;
+        }
+
+        .cell.rowspanned {
+            position: absolute;
+            vertical-align: middle;
+            top: 40%;
+            bottom: 0;
+            width: 11%;
         }
     </style>
     <script type="text/javascript">
@@ -90,6 +113,10 @@
         function LoadGraphPage(metricName) {
             window.localStorage.setItem("MetricName", metricName);
             window.location.replace("Chart.html");
+        }
+        function LoadMapPage(metricName) {
+            window.localStorage.setItem("MetricName", metricName);
+            window.location.replace("Maps.html");
         }
         function LoadName() {
             $("#lblUserName").text(window.localStorage.getItem("Username"));
@@ -107,12 +134,12 @@
         <nav class="list-nav-small">
             <ul>
                 <li class="user-icon-small"><span id="lblUserName"></span></li>
-                <li class="home-icon-small"><a href="index.html" class="close-panel">Home</a></li>
+                <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
                 <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
-                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>  
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
                 <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
                 <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
@@ -135,10 +162,25 @@
                         </div>
                         <div id="pages_maincontent">
 
-                            <div class="tablewrapper" onclick="LoadGraphPage('Growth')">
+                            <div class="tablewrapper">
                                 <div class="table">
-                                    <div class="header">
+                                    <div class="header" onclick="LoadGraphPage('Growth')">
                                         <a href="#" class="tab-link active button">Growth</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
                                     </div>
                                     <div class="rowMetric">
                                         <div class="cellMetric">
@@ -152,6 +194,9 @@
                                         </div>
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Green.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick = "LoadMapPage('Growth')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
                                         </div>
                                     </div>
                                     <div class="rowMetric">
@@ -167,14 +212,29 @@
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Green.png" class="metricRAG" />
                                         </div>
-
+                                        <div class="empty cell"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tablewrapper" onclick="LoadGraphPage('Diversity')">
+                            <div class="tablewrapper">
                                 <div class="table">
-                                    <div class="header">
+                                    <div class="header" onclick="LoadGraphPage('Diversity')">
                                         <a href="#" class="tab-link active button">Diversity</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
                                     </div>
                                     <div class="rowMetric">
                                         <div class="cellMetric">
@@ -188,6 +248,9 @@
                                         </div>
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Red.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick="LoadMapPage('Diversity')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
                                         </div>
                                     </div>
                                     <div class="rowMetric">
@@ -203,13 +266,29 @@
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Red.png" class="metricRAG" />
                                         </div>
+                                        <div class="empty cell"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tablewrapper" onclick="LoadGraphPage('Attrition')">
+                            <div class="tablewrapper">
                                 <div class="table">
-                                    <div class="header">
+                                    <div class="header" onclick="LoadGraphPage('Attrition')">
                                         <a href="#" class="tab-link active button">Attrition</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
                                     </div>
                                     <div class="rowMetric">
                                         <div class="cellMetric">
@@ -223,6 +302,9 @@
                                         </div>
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Green.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick="LoadMapPage('Attrition')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
                                         </div>
                                     </div>
                                     <div class="rowMetric">
@@ -238,13 +320,29 @@
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Red.png" class="metricRAG" />
                                         </div>
+                                        <div class="empty cell"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tablewrapper" onclick="LoadGraphPage('On Boarders')">
+                            <div class="tablewrapper">
                                 <div class="table">
-                                    <div class="header">
+                                    <div class="header" onclick="LoadGraphPage('On Boarders')">
                                         <a href="#" class="tab-link active button">On Boarders</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
                                     </div>
                                     <div class="rowMetric">
                                         <div class="cellMetric">
@@ -258,6 +356,9 @@
                                         </div>
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Green.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick="LoadMapPage('On Boarders')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
                                         </div>
                                     </div>
                                 </div>

@@ -16,15 +16,15 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
-  
-    function Loadurl(url) {
 
-        window.location.replace(url);
-    }
+        function Loadurl(url) {
 
-    function LoadName() {
-        $("#lblUserName").text(window.localStorage.getItem("Username"));
-    }
+            window.location.replace(url);
+        }
+
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
+        }
     </script>
 
 
@@ -39,12 +39,12 @@
         <nav class="list-nav-small">
             <ul>
                 <li class="user-icon-small"><span id="lblUserName"></span></li>
-                <li class="home-icon-small"><a href="index.html" class="close-panel">Home</a></li>
+                <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
                 <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
-                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>  
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
                 <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
                 <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
@@ -64,7 +64,7 @@
                 <div data-page="projects" class="page no-toolbar no-navbar">
                     <div class="page-content">
                         <div class="navbarpages">
-                            <div class="navbar_home_link"><a href="index.html"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
+                            <div class="navbar_home_link"><a href="#" onclick="Loadurl('index.html')"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
                             <div class="navbar_page_center">Dashboard</div>
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
@@ -75,10 +75,9 @@
                                 <img src="images/Dashboard_500x315.png" alt="" title="" />
                                 <ul class="features_list">
                                     <!--<li><a href="#" onclick="Loadurl('Maps.html')"><img src="images/icons/white/photos.png" alt="" title="" /><span>Maps</span></a></li>-->
-                                    <li><a href="#" onclick="Loadurl('Metric.html')"><img src="images/icons/white/blog.png" alt="" title="" /><span>Performance Metrics</span></a></li>
-                                    <li><a href="#"><img src="images/icons/white/blog.png" alt="" title="" /><span>Initiative Performance</span></a></li>
+                                    <li><a href="#" onclick="Loadurl('Metric.html')"><img src="images/icons/white/Dashboard.png" alt="" title="" /><span>Performance Metrics</span></a></li>
+                                    <li><a href="#"><img src="images/icons/white/Dashboard1.png" alt="" title="" /><span>Initiative Performance</span></a></li>
                                 </ul>
-
                             </div>
                         </div>
                     </div>

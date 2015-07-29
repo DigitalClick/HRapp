@@ -661,27 +661,6 @@
             var myLineIGChart = new Chart(document.getElementById("barIGChart").getContext("2d")).Bar(barIGData, options);
             $("#legendIGBar").append(myLineIGChart.generateLegend());
 
-
-            new Maplace({
-                view_all: false,
-                locations: [{
-                    lat: 28.6139,
-                    lon: 77.2090,
-                    html: delhiMapData
-                }, {
-                    lat: 18.9750,
-                    lon: 72.8258,
-                    html: mumbaiMapData
-                }, {
-                    lat: 13.0827,
-                    lon: 80.2707,
-                    html: chennaiMapData
-                }
-                ],
-                controls_on_map: false
-
-            }).Load();
-
             //});
         }
         function Loadurl(url) {
@@ -702,7 +681,7 @@
         <nav class="list-nav-small">
             <ul>
                 <li class="user-icon-small"><span id="lblUserName"></span></li>
-                <li class="home-icon-small"><a href="index.html" class="close-panel">Home</a></li>
+                <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
                 <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
@@ -766,12 +745,7 @@
                                 <canvas id="barIGChart" width="300" height="400" />
                             </div>
                             <div id="legendIGBar" class="chart-legend"></div>
-                            <div class="buttons-row">
-                                <a href="#" class="tab-link active button">Map View</a>
-                            </div>
-                            <div id="canvas-holder">
-                                <div id="gmap" style="width: 300px;height:350px; padding: 10px 0 0 0;"></div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -785,10 +759,7 @@
         <script type="text/javascript" src="js/email.js"></script>
         <script type="text/javascript" src="js/framework7.min.js"></script>
         <script type="text/javascript" src="js/my-app.js"></script>
-        <script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.7">
-        </script>
-        <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-        <script src="js/maplace-0.1.3.min.js"></script>
+    
         <script type="text/javascript">
             $(document).ready(function () {
                 LoadGrid();
