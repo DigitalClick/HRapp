@@ -21,6 +21,9 @@
     <script src="scripts/index.js"></script>
 
     <style type="text/css">
+        .chart-legend {
+            margin-bottom: 10px;
+        }
         .chart-legend li span {
             display: inline-block;
             width: 12px;
@@ -701,7 +704,7 @@
                 <div data-page="projects" class="page no-toolbar no-navbar">
                     <div class="page-content">
                         <div class="navbarpages">
-                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('Metric.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('PerformanceMetrics.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
                             <div class="navbar_page_center" id="metricName"></div>
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
@@ -711,35 +714,35 @@
                             <!--<div id="gridView">
                             </div>-->
                             <div class="buttons-row">
-                                <a href="#" class="tab-link active button">Pie Chart</a>
+                                <a href="#" class="tab-link active button">Distribution</a>
                             </div>
                             <div id="canvas-holder">
                                 <canvas id="pieChart" width="300" height="350" />
                             </div>
                             <div id="legendPie" class="chart-legend"></div>
                             <div class="buttons-row">
-                                <a href="#" class="tab-link active button">Line Chart</a>
+                                <a href="#" class="tab-link active button">Monthly Trend</a>
                             </div>
                             <div id="canvas-holder">
                                 <canvas id="lineChart" width="300" height="400" />
                             </div>
                             <div id="legendLine" class="chart-legend"></div>
                             <div class="buttons-row">
-                                <a href="#" class="tab-link active button">Bar Chart</a>
+                                <a href="#" class="tab-link active button">Level Wise Split</a>
                             </div>
                             <div id="canvas-holder">
                                 <canvas id="barChart" width="300" height="400" />
                             </div>
                             <div id="legendBar" class="chart-legend"></div>
                             <div class="buttons-row">
-                                <a href="#" class="tab-link active button">Bar Chart</a>
+                                <a href="#" class="tab-link active button">Location Wise Split</a>
                             </div>
                             <div id="canvas-holder">
                                 <canvas id="barCityChart" width="300" height="400" />
                             </div>
                             <div id="legendCityBar" class="chart-legend"></div>
                             <div class="buttons-row">
-                                <a href="#" class="tab-link active button">Bar Chart</a>
+                                <a href="#" class="tab-link active button">Business Line Wise Split</a>
                             </div>
                             <div id="canvas-holder">
                                 <canvas id="barIGChart" width="300" height="400" />

@@ -47,8 +47,9 @@
                 username: $("#txtUsername").val(),
                 password: $("#txtPassword").val()
             };
-            reqMessage.message = message;
+            reqMessage.message = message;    
             window.localStorage.setItem("Username", $("#txtUsername").val());
+            
             Loadurl("index.html");
             //    $.ajax({
             //        url: serviceUrl + 'MobileValidateUser',

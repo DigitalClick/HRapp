@@ -24,8 +24,13 @@
             $("#lblUserName").text(window.localStorage.getItem("Username"));            
         }  
         function Loadurl(url) {
-
             window.location.replace(url);
+        }
+        function LoadDialer(phoneNo) {         
+            document.location.href = "tel:"+ phoneNo;
+        }
+        function LoadMailer(email) {          
+            document.location.href = "mailto:" + email;
         }
     </script>
 
@@ -185,8 +190,8 @@
             <h4>Contact</h4>         
             <ul class="social_share">
                 <li><a href="#"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
-                <li><a href="#"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>      
-                <li><a href="#"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>                
+                <li><a href="#" onclick="LoadDialer('1234567890')"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>      
+                <li><a href="#" onclick="LoadMailer('test@test.com')"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>                
             </ul>
             <div class="close_popup_button"><a href="#" class="close-popup">Close</a></div>
         </div>
