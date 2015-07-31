@@ -29,48 +29,61 @@
         };
         var reqMessage = { message: null };
         function CheckLogin() {
-            $("#lblMessage").empty();
-            message.header = {
-                appVersion: null,
-                authToken: null,
-                deviceType: null,
-                osName: null,
-                phoneModel: null,
-                imei: "123456789",
-                responseMessage: null,
-                responseCode: 0,
-                sessionId: "",
-                timeStamp: null,
-                timeZone: null
-            };
-            message.body = {
-                username: $("#txtUsername").val(),
-                password: $("#txtPassword").val()
-            };
-            reqMessage.message = message;    
-            window.localStorage.setItem("Username", $("#txtUsername").val());
-            
-            Loadurl("index.html");
-            //    $.ajax({
-            //        url: serviceUrl + 'MobileValidateUser',
-            //        type: 'Post',
-            //        dataType: 'json',
-            //        data: JSON.stringify(reqMessage),
-            //        contentType: "application/json; charset=utf-8",
-            //        success: function (data) {
-            //            if (data.message.header.responseCode == "0") {
-            //                window.localStorage.setItem("Username", $("#txtUsername").val());
-            //                Loadurl("index.html");
-            //            }
-            //            else
-            //                $("#lblMessage").text(data.message.header.responseMessage);
-            //        },
-            //        error: function (request, status, error) {
-            //            //alert(1);
-            //            //alert(request.responseText);
-            //        }
+            var name = $("#txtUsername").val();
+            var password = $("#txtPassword").val();
+            if (name.trim() == "") {
+                $("#lblMessage").text("Please enter your username");
+            }
+            else {
+                if (password.trim() == "1234") {
+                    $("#lblMessage").empty();
+                    message.header = {
+                        appVersion: null,
+                        authToken: null,
+                        deviceType: null,
+                        osName: null,
+                        phoneModel: null,
+                        imei: "123456789",
+                        responseMessage: null,
+                        responseCode: 0,
+                        sessionId: "",
+                        timeStamp: null,
+                        timeZone: null
+                    };
+                    message.body = {
+                        username: $("#txtUsername").val(),
+                        password: $("#txtPassword").val()
+                    };
+                    reqMessage.message = message;
+                    window.localStorage.setItem("Username", $("#txtUsername").val());
 
-            //    });
+                    Loadurl("index.html");
+                }
+                else {
+                    $("#lblMessage").text("Invalid password");
+                }
+
+                //    $.ajax({
+                //        url: serviceUrl + 'MobileValidateUser',
+                //        type: 'Post',
+                //        dataType: 'json',
+                //        data: JSON.stringify(reqMessage),
+                //        contentType: "application/json; charset=utf-8",
+                //        success: function (data) {
+                //            if (data.message.header.responseCode == "0") {
+                //                window.localStorage.setItem("Username", $("#txtUsername").val());
+                //                Loadurl("index.html");
+                //            }
+                //            else
+                //                $("#lblMessage").text(data.message.header.responseMessage);
+                //        },
+                //        error: function (request, status, error) {
+                //            //alert(1);
+                //            //alert(request.responseText);
+                //        }
+
+                //    });
+            }
         }
         function Loadurl(url) {
 

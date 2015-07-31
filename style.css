@@ -1588,7 +1588,7 @@ ul.comments {
 .cellContentFld {
     display: table-cell;
     border: 0;
-    width: 60%;
+    width: 50%;
     font-size: 14px;
     padding: 0px 0 0 5px;
     vertical-align: middle;
@@ -1597,7 +1597,7 @@ ul.comments {
 .cellContentVal {
     display: table-cell;
     border: 0;
-    width: 40%;
+    width: 50%;
     font-size: 14px;
     padding: 0px 0 0 5px;
     vertical-align: middle;
@@ -1829,7 +1829,7 @@ ul.comments {
     .cellContentFld {
         display: table-cell;
         border: 0;
-        width: 60%;
+        width: 50%;
         font-size: 14px;
         padding: 0px 0 0 5px;
         vertical-align: middle;
@@ -1838,7 +1838,7 @@ ul.comments {
     .cellContentVal {
         display: table-cell;
         border: 0;
-        width: 40%;
+        width: 50%;
         font-size: 14px;
         padding: 0px 0 0 5px;
         vertical-align: middle;

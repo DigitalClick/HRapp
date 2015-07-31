@@ -16,20 +16,19 @@
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
-    <script src="scripts/index.js"></script>   
+    <script src="scripts/index.js"></script>
 
-    <script type="text/javascript">      
-        function LoadName()
-        {          
-            $("#lblUserName").text(window.localStorage.getItem("Username"));            
-        }  
+    <script type="text/javascript">
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
+        }
         function Loadurl(url) {
             window.location.replace(url);
         }
-        function LoadDialer(phoneNo) {         
-            document.location.href = "tel:"+ phoneNo;
+        function LoadDialer(phoneNo) {
+            document.location.href = "tel:" + phoneNo;
         }
-        function LoadMailer(email) {          
+        function LoadMailer(email) {
             document.location.href = "mailto:" + email;
         }
     </script>
@@ -47,8 +46,8 @@
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
                 <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
-                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>   
-                <!--<li class="video-icon-small"><a href="#" onclick="Loadurl('Voice.html')" class="close-panel">Voice</a></li>-->              
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <!--<li class="video-icon-small"><a href="#" onclick="Loadurl('Voice.html')" class="close-panel">Voice</a></li>-->
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
                 <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
                 <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
@@ -110,7 +109,7 @@
 
                         <div class="minimal_intro">
                             <span>Smart HR</span> <br />
-                            Always connected <br />                            
+                            Always connected <br />
                         </div>
                         <nav class="list-nav">
                             <ul>
@@ -118,15 +117,13 @@
                                 <!--<li class="about-icon"><a href="#" data-popup=".popup-products" class="open-popup">Products</a></li>-->
                                 <li class="myoffice-icon"><a href="MyOffice.html">MyOffice</a></li>
                                 <li class="aroundme-icon"><a href="AroundME.html">AroundME</a></li>
-                                <li class="aboutme-icon"><a href="AboutME.html">AboutME</a></li>
+                                <li class="aboutme-icon"><a href="#" onclick="Loadurl('AboutMe.html')">AboutME</a></li>
                                 <!--<li class="lock-icon"><a href="#" data-panel="right" class="open-panel">Account</a></li>-->
                                 <li class="dashboard-icon"><a href="#" onclick="Loadurl('Dashboard.html')">Dashboard</a></li>
                                 <li class="events-icon"><a href="Events.html">Events</a></li>
                                 <li class="enablers-icon"><a href="Enablers.html">Enablers</a></li>
                             </ul>
                         </nav>
-
-
                     </div>
                 </div>
             </div>
@@ -142,9 +139,7 @@
             <div class="loginform">
                 <form id="LoginForm" method="post">
                     <label>Product1 :</label>
-
                     <label>Product2:</label>
-
                 </form>
             </div>
             <div class="close_popup_button_gray"><a href="#" class="close-popup">Close</a></div>
@@ -187,11 +182,11 @@
     <!-- Contact Popup -->
     <div class="popup popup-contact">
         <div class="content-block">
-            <h4>Contact</h4>         
+            <h4>Contact</h4>
             <ul class="social_share">
                 <li><a href="#"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
-                <li><a href="#" onclick="LoadDialer('1234567890')"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>      
-                <li><a href="#" onclick="LoadMailer('test@test.com')"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>                
+                <li><a href="#" onclick="LoadDialer('1234567890')"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>
+                <li><a href="#" onclick="LoadMailer('test@test.com')"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>
             </ul>
             <div class="close_popup_button"><a href="#" class="close-popup">Close</a></div>
         </div>

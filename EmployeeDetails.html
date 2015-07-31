@@ -16,14 +16,64 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
-
         function Loadurl(url) {
-
             window.location.replace(url);
         }
-
+        function LoadDialer(phoneNo) {
+            document.location.href = "tel:" + phoneNo;
+        }
+        function LoadMailer(email) {
+            document.location.href = "mailto:" + email;
+        }
         function LoadName() {
-            $("#lblUserName").text(window.localStorage.getItem("Username"));
+            $("#lblUserName").text(window.localStorage.getItem("Username"));            
+            LoadEmpDetails();
+        }
+        function LoadEmpDetails() {
+            var empID, empName, empLevel, empProject, empJoinDate;
+            $("#empName").append(window.localStorage.getItem("EmpName"));
+            if (window.localStorage.getItem("EmpName") == "Margret Dave") {
+                empID = "101";
+                empName = "Mar";
+                empLevel = "M";
+                empProject = "Alpha";
+                empJoinDate = "Jun 10 2014";
+            }
+            var empDiv = "<div class='rowContent'>" +
+                                                "<div class='cellContentFld'>" +
+                                                    "<span>Employee ID</span>" +
+                                                "</div>" +
+                                                "<div class='cellContentVal'>" +
+                                                    empID +
+            "</div>" +
+        "</div>" +
+        "<div class='rowContent'>" +
+            "<div class='cellContentFld'>" +
+                "<span>Level</span>" +
+            "</div>" +
+            "<div class='cellContentVal'>" +
+                empLevel +
+            "</div>" +
+        "</div>" +
+        "<div class='rowContent'>" +
+            "<div class='cellContentFld'>" +
+                "<span>Project</span>" +
+            "</div>" +
+            "<div class='cellContentVal'>" +
+                empProject +
+            "</div>" +
+        "</div>" +
+        "<div class='rowContent'>" +
+            "<div class='cellContentFld'>" +
+                "<span>Date of Join</span>" +
+            "</div>" +
+            "<div class='cellContentVal'>" +
+                empJoinDate +
+            "</div>" +
+        "</div>";
+           
+            $('#divDetails').append(empDiv);
+
         }
     </script>
 
@@ -64,27 +114,25 @@
                 <div data-page="projects" class="page no-toolbar no-navbar">
                     <div class="page-content">
                         <div class="navbarpages">
-                            <div class="navbar_home_link"><a href="#" onclick="Loadurl('index.html')"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
-                            <div class="navbar_page_center">Enablers</div>
+                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('EmployeeSearch.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_page_center">Employee Details</div>
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
                         <div id="pages_maincontent">
 
-                            <h2 class="page_subtitle">Enablers</h2>
+                            <div class="contentwrapper">
+                                <div class="contentText">
+                                    <div class="contentHeader">
+                                        <a href="#" class="action1 open-popup tab-link active button" data-popup=".popup-contact"><span id="empName"></span></a>
+                                    </div>
+                                    <div class="tableContentText">
+                                        <div class="post_thumb"><img src="images/photos/ProfileWomen.png" alt="" title="" /></div>
+                                        <div id="divDetails" class="post_details">
 
-                            <div class="page_single">
-                                <img src="images/Enablers_500x315.png" alt="" title="" />
-                                <!--<blockquote>
-                                    Design can be art. Design can be aesthetics. Design is so simple, that's why it is so complicated. <span>Paul Rand</span>
-                                </blockquote>-->
-                                <!--<h3>Smart features</h3>-->
-                                <ul class="features_list">
-                                    <li><a href="#"><img src="images/icons/white/Award.png" alt="" title="" /><span>MyNomination</span></a></li>
-                                    <li><a href="#" onclick="Loadurl('EmployeeSearch.html')"><img src="images/icons/white/Emp_Search.png" alt="" title="" /><span>FindMe</span></a></li>
-                                    <li><a href="#" onclick="Loadurl('PolicySearch.html')"><img src="images/icons/white/Policy_Search.png" alt="" title="" /><span>Policy Search</span></a></li>
-                                    <li><a href="#"><img src="images/icons/white/speaker.png" alt="" title="" /><span>TalkToMe</span></a></li>
-                                </ul>
+                                        </div>
 
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -99,6 +147,23 @@
         <script type="text/javascript" src="js/email.js"></script>
         <script type="text/javascript" src="js/framework7.min.js"></script>
         <script type="text/javascript" src="js/my-app.js"></script>
+
+
+
+    </div>
+
+    <!-- Contact Popup -->
+    <div class="popup popup-contact">
+        <div class="content-block">
+            <h4>Contact</h4>
+            <ul class="social_share">
+                <li><a href="#"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
+                <li><a href="#" onclick="LoadDialer('1234567890')"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>
+                <li><a href="#" onclick="LoadMailer('test@test.com')"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>
+            </ul>
+            <div class="close_popup_button"><a href="#" class="close-popup">Close</a></div>
+        </div>
+    </div>
 
 </body>
 </html>
