@@ -5,6 +5,7 @@
   <author href="" email="Nirvana@outlook.in">Nirvana Land</author>
   <content src="Login.html" />
   <icon src="/res/icons/ios/icon.png" />
+  <splash src="/res/icons/ios/icon.png"/>
   <access origin="*" />
   <access origin="tel:*" launch-external="yes"/>
   <access origin="mailto:*" launch-external="yes"/>  
