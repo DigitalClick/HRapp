@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.MobApp1" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
-  <name>SmartHR</name>
-  <description>HR On The Move</description>
-  <author href="" email="Nirvana@outlook.in">Nirvana Land</author>
+  <name>HR</name>
+  <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.</description>
+  <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team </author>
   <content src="Login.html" />
-  <icon src="/res/icons/ios/icon.png" />
-  <splash src="/res/icons/ios/icon.png"/>
+  <icon src="icon.png" />
   <access origin="*" />
   <access origin="tel:*" launch-external="yes"/>
   <access origin="mailto:*" launch-external="yes"/>  
