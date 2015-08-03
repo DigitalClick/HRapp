@@ -31,6 +31,13 @@
         function LoadMailer(email) {
             document.location.href = "mailto:" + email;
         }
+        function LoadSMS(phoneNo) {
+            document.location.href = "sms:" + phoneNo;
+        }
+        function LoadChat(address) {
+            document.location.href = "im:" + address;
+        }
+
     </script>
 
 </head>
@@ -117,7 +124,7 @@
                                 <!--<li class="about-icon"><a href="#" data-popup=".popup-products" class="open-popup">Products</a></li>-->
                                 <li class="myoffice-icon"><a href="MyOffice.html">MyOffice</a></li>
                                 <li class="aroundme-icon"><a href="AroundME.html">AroundME</a></li>
-                                <li class="aboutme-icon"><a href="AboutME.html">AboutME</a></li>
+                                <li class="aboutme-icon"><a href="#" onclick="Loadurl('AboutMe.html')">AboutME</a></li>
                                 <!--<li class="lock-icon"><a href="#" data-panel="right" class="open-panel">Account</a></li>-->
                                 <li class="dashboard-icon"><a href="#" onclick="Loadurl('Dashboard.html')">Dashboard</a></li>
                                 <li class="events-icon"><a href="Events.html">Events</a></li>
@@ -184,7 +191,7 @@
         <div class="content-block">
             <h4>Contact</h4>
             <ul class="social_share">
-                <li><a href="#"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
+                <li><a href="#" onclick="LoadChat('<sip:test.test@company.com>')"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
                 <li><a href="#" onclick="LoadDialer('1234567890')"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>
                 <li><a href="#" onclick="LoadMailer('test@test.com')"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>
             </ul>

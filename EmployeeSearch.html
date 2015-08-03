@@ -27,16 +27,24 @@
 
         /*.search-holder {
             margin: 3px;
-            background: #ECEFF5;
+            background: #D5B1CB;
             border-bottom: 1px solid #C4CDE0;
             height: 50px;
         }*/
+        .search {
+            padding: 3%;
+            width: 93%;
+            margin: 0 0 5px 0;
+            border: 1px solid #3f3f3f;
+            /*background-color: #222222;*/
+            /*color: #000;*/
+        }
 
         .title {
             /*font-size: 16px;*/
             font-weight: bold;
-            /*width: 70%;*/
-            color: #333333;
+            width: 100%;
+            color: #000;
             /*margin-left: 20px;*/
         }
 
@@ -46,30 +54,34 @@
         }
 
         .textbox {
-            margin-top: 15px;
+            width: 100%;
+            padding: 0 0 15px 0;
         }
 
             .textbox input {
-                border: 1px solid #C4CDE0;
-                outline: medium none;
-                padding: 2px;
-                width: 190px;
-                /*font-size: 11px;*/
+                /*border: 1px solid #C4CDE0;
+            outline: medium none;
+            padding: 2px;
+            width: 190px;
+            /*font-size: 11px;*/
                 /*height: 22px;*/
+                padding: 2%;
+                width: 93%;
+                margin: 0 0 5px 0;
+                border: 1px solid #3f3f3f;
+                /*background-color: #222222;*/
+                color: #000;
             }
 
-        .friends {
-            margin: 0 0 0 0;
-            /*margin:0 0 0 5px;*/
-        }
+
 
         .friend_holder {
-            border-bottom: 1px solid #B2B2B2;
             width: 100%;
-            /*height: 100px;*/
-            padding-bottom: 10px;
-            margin-top: 10px;
-            /*margin-right: 10px;*/
+            margin: 5px 0 5px 5px;
+        }
+
+        .friends {
+            width: 100%;
         }
 
         .name {
@@ -84,9 +96,9 @@
                 text-decoration: none;
             }
 
-        /*.name a:hover {
+                .name a:hover {
                     text-decoration: underline;
-                }*/
+                }
     </style>
     <script type="text/javascript">
 
@@ -140,14 +152,16 @@
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
                         <div id="pages_maincontent">
+
                             <div class="search-holder">
-                                <div class="title fl">Employees&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                <div class="title fl">Enter Employee Name</div>
                                 <div class="textbox fl">
                                     <input type="text" name="search" class="search" value="" placeholder="Search For Employees" autocomplete="off">
                                 </div>
                             </div>
-
+                            <br /><br />
                             <div id="frndsList" class="friends" style="display:none;">
+
                                 <div class="friend_holder fl" id="Margret Dave">
                                     <div class="photo fl">
                                         <img src="images/photos/ProfileWomen.png" width="50" height="50">
