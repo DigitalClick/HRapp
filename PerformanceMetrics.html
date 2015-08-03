@@ -1,0 +1,401 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+    <title>Digital You</title>
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css' />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <style type="text/css">
+        .tablewrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+            height: 20%;
+            padding: 0 0 10px 0px;
+        }
+
+        .header {
+            display: table-caption;
+            max-width: 100%;
+            text-align: left;
+        }
+
+        .headercolumn {
+            display: table-cell;
+            width: 18%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .rowMetric {
+            display: table-row;
+        }
+
+        .cellMetric {
+            display: table-cell;
+            border: 0;
+            width: 35%;
+            font-size: 16px;
+            padding: 0px 0 0 10px;
+            vertical-align: middle;
+        }
+
+        .cellMetricNo {
+            display: table-cell;
+            border: 0;
+            width: 18%;
+            font-size: 16px;
+            padding: 0px 0 0 10px;
+            vertical-align: middle;
+        }
+
+        .cellMetricImg {
+            display: table-cell;
+            border: 0;
+            width: 18%;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .cellMetric span {
+            border: 0;
+            width: 100%;
+            font-size: 16px;
+            padding: 0px 0px 20px 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .metricRAG {
+            max-width: 40%;
+            max-height: 40%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .mapImg {
+            max-width: 100%;
+            max-height: 100%;
+            text-align: right;
+            vertical-align: middle;
+            padding: 0 0 0 0;
+        }
+
+        .cell.empty {
+            border: none;
+            width: 11%;
+        }
+
+        .cell.rowspanned {
+            position: absolute;
+            vertical-align: middle;
+            top: 40%;
+            bottom: 0;
+            width: 11%;
+        }
+    </style>
+    <script type="text/javascript">
+        function Loadurl(url) {
+            window.location.replace(url);
+        }
+        function LoadGraphPage(metricName) {
+            window.window.localStorage.setItem("PageName", "PerformanceMetrics.html");
+            window.localStorage.setItem("MetricName", metricName);
+            window.location.replace("Chart.html");
+        }
+        function LoadMapPage(metricName) {
+            window.window.localStorage.setItem("PageName", "PerformanceMetrics.html");
+            window.localStorage.setItem("MetricName", metricName);
+            window.location.replace("Maps.html");
+        }
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
+        }
+    </script>
+
+
+</head>
+<body id="mobile_wrap" onload="LoadName()">
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+        <nav class="list-nav-small">
+            <ul>
+                <li class="user-icon-small"><span id="lblUserName"></span></li>
+                <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
+                <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
+                <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
+                <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
+                <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
+                <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
+                <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Dashboard.html')" class="close-panel">Dashboard</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Maps.html')" class="close-panel">Maps</a></li>-->
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages">
+                <div data-page="projects" class="page no-toolbar no-navbar">
+                    <div class="page-content">
+                        <div class="navbarpages">
+                            <div class="navbar_back_link"><a href="Dashboard.html"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_page_center">Performance Metrics</div>
+                            <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
+                        </div>
+                        <div id="pages_maincontent">
+
+                            <div class="tablewrapper">
+                                <div class="table">
+                                    <div class="header" onclick="LoadGraphPage('Growth')">
+                                        <a href="#" class="tab-link active button">Growth</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span>Overall</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            11.3%
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            10.5%
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Green.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick="LoadMapPage('Growth')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
+                                        </div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span> Employee</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            15.3%
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            15%
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Green.png" class="metricRAG" />
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tablewrapper">
+                                <div class="table">
+                                    <div class="header" onclick="LoadGraphPage('Diversity')">
+                                        <a href="#" class="tab-link active button">Diversity</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span>Men</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            72.0%
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            70.0%
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Red.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick="LoadMapPage('Diversity')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
+                                        </div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span> Women</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            28.0%
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            30.0%
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Red.png" class="metricRAG" />
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tablewrapper">
+                                <div class="table">
+                                    <div class="header" onclick="LoadGraphPage('Attrition')">
+                                        <a href="#" class="tab-link active button">Attrition</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span>Un Planned</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            12.0%
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            13.0%
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Green.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick="LoadMapPage('Attrition')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
+                                        </div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span>Planned</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            5.0%
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            4.5%
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Red.png" class="metricRAG" />
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tablewrapper">
+                                <div class="table">
+                                    <div class="header" onclick="LoadGraphPage('On Boarders')">
+                                        <a href="#" class="tab-link active button">On Boarders</a>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            &nbsp;
+                                        </div>
+                                        <div class="headercolumn">
+                                            Actual
+                                        </div>
+                                        <div class="headercolumn">
+                                            Target
+                                        </div>
+                                        <div class="headercolumn">
+                                            RAG
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span>Entry Level</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            2109
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            2487
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Red.png" class="metricRAG" />
+                                        </div>
+                                        <div class="rowspanned cell" onclick="LoadMapPage('On Boarders')">
+                                            <img src="images/Map-RAG.png" class="mapImg" />
+                                        </div>
+                                    </div>
+                                    <div class="rowMetric">
+                                        <div class="cellMetric">
+                                            <span>Lateral</span>
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            633
+                                        </div>
+                                        <div class="cellMetricNo">
+                                            746
+                                        </div>
+                                        <div class="cellMetricImg">
+                                            <img src="images/Circle_Red.png" class="metricRAG" />
+                                        </div>
+                                        <div class="empty cell"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/email.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+</html>
