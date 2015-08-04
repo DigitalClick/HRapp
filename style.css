@@ -406,6 +406,48 @@ a.button_small {
     background-position: 50% 25px;
 }
 
+.HR-icon a {
+    background: url(images/icons/white/HumanResources.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Learning-icon a {
+    background: url(images/icons/white/Learning.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Procurement-icon a {
+    background: url(images/icons/white/Procurement.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Operations-icon a {
+    background: url(images/icons/white/Operations.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Delivery-icon a {
+    background: url(images/icons/white/DeliveryExcellence.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Hiring-icon a {
+    background: url(images/icons/white/Hireing.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
 .logout-icon a {
     background: url(images/icons/white/logout.png);
     background-size: auto 40%;
@@ -455,6 +497,12 @@ a.button_small {
     background-position: 10px 50%;
 }
 
+.companyHome-icon-small {
+    background: url(images/icons/white/Company_Home.png);
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
 
 .about-icon-small {
     background: url(images/icons/white/about.png);
@@ -570,6 +618,48 @@ a.button_small {
 
 .enablers-icon-small {
     background: url(images/icons/white/Enablers.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.HR-icon-small {
+    background: url(images/icons/white/HumanResources.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Learning-icon-small {
+    background: url(images/icons/white/Learning.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Procurement-icon-small {
+    background: url(images/icons/white/Procurement.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Operations-icon-small {
+    background: url(images/icons/white/Operations.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Delivery-icon-small {
+    background: url(images/icons/white/DeliveryExcellence.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Hiring-icon-small {
+    background: url(images/icons/white/Hireing.png);
     background-size: auto 50%;
     background-repeat: no-repeat;
     background-position: 10px 50%;
@@ -734,6 +824,19 @@ ul.icons_4row li {
 /*===============================================*/
 .homepage {
     background: url(images/bg.png) no-repeat center center;
+    background-attachment: fixed;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.company_homepage {
+    background: url(images/hr_bg5.png) no-repeat center center;
     background-attachment: fixed;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -964,8 +1067,8 @@ ul.features_list_detailed {
 .login-screen {
     /*background:url(images/trans_black.png) repeat;*/
     background-color: #000000;
-    opacity:0.9;
-    color:#FFFFFF;
+    opacity: 0.9;
+    color: #FFFFFF;
 }
 
     .popup h4 {
@@ -1780,6 +1883,30 @@ ul.comments {
     }
 
     .enablers-icon a {
+        background-position: 50% 15px;
+    }
+
+    .HR-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Learning-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Procurement-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Operations-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Delivery-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Hiring-icon a {
         background-position: 50% 15px;
     }
 

@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css' />
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="cordova.js"></script>
+    <script src="cordova.js"></script>   
     <style>
         .holder {
             /*width: 850px;*/
@@ -38,7 +38,7 @@
             margin: 0 0 5px 0;
             border: 1px solid #3f3f3f;
             /*background-color: #222222;*/
-            /*color: #000;*/
+            color: #000;
         }
 
         .title {
@@ -58,6 +58,7 @@
             width: 100%;
             padding: 0 0 15px 0;
             vertical-align: top;
+            color:#000;
         }
 
             .textbox img {
@@ -118,7 +119,9 @@
         }
         function LoadName() {
             $("#lblUserName").text(window.localStorage.getItem("Username"));
+         
         }
+       
     </script>
 
 </head>
@@ -438,7 +441,7 @@
             </div>
         </div>
     </div>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <!--<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>-->
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/jquery.swipebox.js"></script>
