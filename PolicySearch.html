@@ -15,7 +15,7 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css' />
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="cordova.js"></script>   
+    <script src="cordova.js"></script>
     <style>
         .holder {
             /*width: 850px;*/
@@ -27,18 +27,19 @@
         }
 
         /*.search-holder {
-                margin: 3px;
-                background: #D5B1CB;
-                border-bottom: 1px solid #C4CDE0;
-                height: 50px;
-            }*/
+            margin: 3px;
+            background: #D5B1CB;
+            border-bottom: 1px solid #C4CDE0;
+            height: 50px;
+        }*/
         .search {
             padding: 3%;
             width: 80%;
             margin: 0 0 5px 0;
             border: 1px solid #3f3f3f;
             /*background-color: #222222;*/
-            color: #000;
+            color: #ffffff;
+            background-color: #461438;
         }
 
         .title {
@@ -58,7 +59,7 @@
             width: 100%;
             padding: 0 0 15px 0;
             vertical-align: top;
-            color:#000;
+            color: #ffffff;
         }
 
             .textbox img {
@@ -67,17 +68,17 @@
 
             .textbox input {
                 /*border: 1px solid #C4CDE0;
-                outline: medium none;
-                padding: 2px;
-                width: 190px;
-                /*font-size: 11px;*/
+            outline: medium none;
+            padding: 2px;
+            width: 190px;
+            /*font-size: 11px;*/
                 /*height: 22px;*/
                 width: 85%;
                 margin: 0 0 0 10px;
                 border: 1px solid #3f3f3f;
                 vertical-align: top;
                 /*background-color: #222222;*/
-                color: #000;
+                color: #ffffff;
             }
 
 
@@ -97,7 +98,7 @@
 
             .name a {
                 /*font-size: 12px;
-                    font-weight: bold;*/
+                font-weight: bold;*/
                 color: #3B5998;
                 cursor: pointer;
                 text-decoration: none;
@@ -119,9 +120,9 @@
         }
         function LoadName() {
             $("#lblUserName").text(window.localStorage.getItem("Username"));
-         
+
         }
-       
+
     </script>
 
 </head>
@@ -129,31 +130,31 @@
 <body id="mobile_wrap" onload="LoadName()">
     <script type="text/javascript">
 
-    function onDeviceReady() {
-        console.log("Device is ready");
-    }
-    function recognizeSpeech() {
-        var maxMatches = 1;
-        var promptString = "Speak now"; // optional
-        var language = "en-US";                     // optional
-        window.plugins.speechrecognizer.startRecognize(function (result) {
-            //alert(result);
-            $("#search").val(result);
-            $("#search").focus();
-        }, function (errorMessage) {
-            console.log("Error message: " + errorMessage);
-        }, maxMatches, promptString, language);
-    }
-    // Show the list of the supported languages
-    function getSupportedLanguages() {
-        window.plugins.speechrecognizer.getSupportedLanguages(function (languages) {
-            // display the json array
-            alert(languages);
-        }, function (error) {
-            alert("Could not retrieve the supported languages : " + error);
-        });
-    }
-    document.addEventListener("deviceready", onDeviceReady, true);
+        function onDeviceReady() {
+            console.log("Device is ready");
+        }
+        function recognizeSpeech() {
+            var maxMatches = 1;
+            var promptString = "Speak now"; // optional
+            var language = "en-US";                     // optional
+            window.plugins.speechrecognizer.startRecognize(function (result) {
+                //alert(result);
+                $("#search").val(result);
+                $("#search").focus();
+            }, function (errorMessage) {
+                console.log("Error message: " + errorMessage);
+            }, maxMatches, promptString, language);
+        }
+        // Show the list of the supported languages
+        function getSupportedLanguages() {
+            window.plugins.speechrecognizer.getSupportedLanguages(function (languages) {
+                // display the json array
+                alert(languages);
+            }, function (error) {
+                alert("Could not retrieve the supported languages : " + error);
+            });
+        }
+        document.addEventListener("deviceready", onDeviceReady, true);
     </script>
 
     <div class="statusbar-overlay"></div>
@@ -167,7 +168,7 @@
                 <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
-                <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
+                <!-- <!--<li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>-->-->
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
                 <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>

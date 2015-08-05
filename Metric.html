@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css' />
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
     <style type="text/css">
         .tablewrapper {
@@ -34,14 +34,12 @@
             max-width: 100%;
             text-align: left;
         }
-
-        .headercolumn {
+         .headercolumn {
             display: table-cell;
-            width: 18%;
+             width:18%;
             text-align: center;
             font-weight: bold;
-        }
-
+        }         
         .rowMetric {
             display: table-row;
         }
@@ -67,7 +65,7 @@
         .cellMetricImg {
             display: table-cell;
             border: 0;
-            width: 18%;
+            width: 18%;                    
             vertical-align: middle;
             text-align: center;
         }
@@ -80,7 +78,6 @@
             text-align: center;
             vertical-align: middle;
         }
-
         .metricRAG {
             max-width: 40%;
             max-height: 40%;
@@ -114,12 +111,10 @@
             window.location.replace(url);
         }
         function LoadGraphPage(metricName) {
-            window.window.localStorage.setItem("PageName", "PerformanceMetrics.html");
             window.localStorage.setItem("MetricName", metricName);
             window.location.replace("Chart.html");
         }
         function LoadMapPage(metricName) {
-            window.window.localStorage.setItem("PageName", "PerformanceMetrics.html");
             window.localStorage.setItem("MetricName", metricName);
             window.location.replace("Maps.html");
         }
@@ -200,7 +195,7 @@
                                         <div class="cellMetricImg">
                                             <img src="images/Circle_Green.png" class="metricRAG" />
                                         </div>
-                                        <div class="rowspanned cell" onclick="LoadMapPage('Growth')">
+                                        <div class="rowspanned cell" onclick = "LoadMapPage('Growth')">
                                             <img src="images/Map-RAG.png" class="mapImg" />
                                         </div>
                                     </div>
@@ -351,35 +346,20 @@
                                     </div>
                                     <div class="rowMetric">
                                         <div class="cellMetric">
-                                            <span>Entry Level</span>
+                                            <span>On Boarders</span>
                                         </div>
                                         <div class="cellMetricNo">
                                             2109
                                         </div>
                                         <div class="cellMetricNo">
-                                            2487
+                                            1895
                                         </div>
                                         <div class="cellMetricImg">
-                                            <img src="images/Circle_Red.png" class="metricRAG" />
+                                            <img src="images/Circle_Green.png" class="metricRAG" />
                                         </div>
                                         <div class="rowspanned cell" onclick="LoadMapPage('On Boarders')">
                                             <img src="images/Map-RAG.png" class="mapImg" />
                                         </div>
-                                    </div>
-                                    <div class="rowMetric">
-                                        <div class="cellMetric">
-                                            <span>Lateral</span>
-                                        </div>
-                                        <div class="cellMetricNo">
-                                            633
-                                        </div>
-                                        <div class="cellMetricNo">
-                                            746
-                                        </div>
-                                        <div class="cellMetricImg">
-                                            <img src="images/Circle_Red.png" class="metricRAG" />
-                                        </div>
-                                        <div class="empty cell"></div>
                                     </div>
                                 </div>
                             </div>
@@ -389,7 +369,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <!--<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>-->
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/jquery.swipebox.js"></script>

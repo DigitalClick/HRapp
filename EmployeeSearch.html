@@ -40,7 +40,8 @@
             margin: 0 0 5px 0;
             border: 1px solid #3f3f3f;
             /*background-color: #222222;*/
-            color: #000;
+            color: #ffffff;
+            background-color: #461438;
         }
 
         .title {
@@ -60,7 +61,7 @@
             width: 100%;
             padding: 0 0 15px 0;
             vertical-align: top;
-            color: #000;
+            color: #ffffff;
         }
 
             .textbox img {
@@ -79,7 +80,7 @@
                 border: 1px solid #3f3f3f;
                 vertical-align: top;
                 /*background-color: #222222;*/
-                color: #000;
+                color: #ffffff;
             }
 
 
@@ -165,7 +166,7 @@
                 <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
-                <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
+                <!--<li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>-->
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
                 <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
@@ -213,11 +214,11 @@
                                 </div>
                                 <div class="friend_holder fl" id="Rajesh Shenoi">
                                     <div class="photo fl"><img src="images/photos/ProfileMan.png" width="50" height="50"></div><div class="name fl">
-                                        <a href="#">Rajesh Shenoi</a>
+                                        <a href="#" onclick="LoadEmpurl('EmployeeDetails.html', 'Rajesh Shenoi')">Rajesh Shenoi</a>
                                     </div>
                                 </div>
                                 <div class="friend_holder fl" id="Amit Kumar">
-                                    <div class="photo fl"><img src="images/photos/ProfileMan.png" width="50" height="50"></div><div class="name fl"><a href="#">Amit Kumar</a></div>
+                                    <div class="photo fl"><img src="images/photos/ProfileMan.png" width="50" height="50"></div><div class="name fl"><a href="#" onclick="LoadEmpurl('EmployeeDetails.html', 'Amit Kumar')">Amit Kumar</a></div>
                                 </div><div class="friend_holder fl" id="Varun Singh">
                                     <div class="photo fl"><img src="images/photos/ProfileMan.png" width="50" height="50"></div><div class="name fl"><a href="#">Varun Singh</a></div>
                                 </div>
@@ -296,7 +297,7 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
-       
+
     </script>
 </body>
 

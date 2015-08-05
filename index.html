@@ -20,7 +20,7 @@
 
     <script type="text/javascript">
         function LoadName() {
-            $("#lblUserName").text(window.localStorage.getItem("Username"));            
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
         }
         function Loadurl(url) {
             window.location.replace(url);
@@ -35,9 +35,17 @@
             document.location.href = "sms:" + phoneNo;
         }
         function LoadChat(address) {
-            document.location.href = "sip:" + address;
+            document.location.href = "im:<sip:" + address + ">";
+           
         }
+        //function LoadChat1(address) {
+        //    document.location.href = "sip:" + address;
 
+        //}
+        //function LoadChat2(address) {
+        //    window.location = "sip:" + address;
+
+        //}
     </script>
 
 </head>
@@ -51,7 +59,7 @@
                 <li class="home-icon-small"><a href="index.html" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
-                <li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>
+                 <!--<li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>-->
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
                 <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <li class="companyHome-icon-small"><a href="#" onclick="Loadurl('Company_Home.html')" class="close-panel">Company Home</a></li>
@@ -130,6 +138,9 @@
                                 <li class="dashboard-icon"><a href="#" onclick="Loadurl('Dashboard.html')">Dashboard</a></li>
                                 <li class="events-icon"><a href="Events.html">Events</a></li>
                                 <li class="enablers-icon"><a href="Enablers.html">Enablers</a></li>
+                                <li class="Diversity-icon"><a href="Diversity.html">Diversity</a></li>
+                                <li class="News-icon"><a href="News.html">News</a></li>
+                                <li class="Innovation-icon"><a href="Innovation.html">Innovation</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -174,7 +185,7 @@
     <div class="popup popup-social">
         <div class="content-block">
             <h4>Social Share</h4>
-            <p>Share icons solution that allows you share and increase your social popularity.</p>
+            <!--<p>Share icons solution that allows you share and increase your social popularity.</p>-->
             <ul class="social_share">
                 <li><a href="#"><img src="images/icons/white/twitter.png" alt="" title="" /></a></li>
                 <li><a href="#"><img src="images/icons/white/facebook.png" alt="" title="" /></a></li>
@@ -193,6 +204,8 @@
             <h4>Contact</h4>
             <ul class="social_share">
                 <li><a href="#" onclick="LoadChat('test.test@company.com')"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
+                <!--<li><a href="#" onclick="LoadChat1('test.test@company.com')"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
+                <li><a href="#" onclick="LoadChat2('test.test@company.com')"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>-->
                 <!--<li><a href="#" onclick="LoadSMS('1234567890')"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>-->
                 <li><a href="#" onclick="LoadDialer('1234567890')"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>
                 <li><a href="#" onclick="LoadMailer('test@test.com')"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>

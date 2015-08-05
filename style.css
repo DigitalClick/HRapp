@@ -434,6 +434,48 @@ a.button_small {
     background-position: 50% 25px;
 }
 
+.TechSupport-icon a {
+    background: url(images/icons/white/TechSupport.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Cafeteria-icon a {
+    background: url(images/icons/white/cafeteria.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Transport-icon a {
+    background: url(images/icons/white/transport.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Diversity-icon a {
+    background: url(images/icons/white/diversity.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.News-icon a {
+    background: url(images/icons/white/News.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
+.Innovation-icon a {
+    background: url(images/icons/white/Innovation.png);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 25px;
+}
+
 .Delivery-icon a {
     background: url(images/icons/white/DeliveryExcellence.png);
     background-size: auto 60%;
@@ -646,6 +688,48 @@ a.button_small {
 
 .Operations-icon-small {
     background: url(images/icons/white/Operations.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.TechSupport-icon-small {
+    background: url(images/icons/white/TechSupport.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Cafeteria-icon-small {
+    background: url(images/icons/white/cafeteria.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Transport-icon-small {
+    background: url(images/icons/white/transport.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Diversity-icon-small {
+    background: url(images/icons/white/diversity.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.News-icon-small {
+    background: url(images/icons/white/News.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.Innovation-icon-small {
+    background: url(images/icons/white/Innovation.png);
     background-size: auto 50%;
     background-repeat: no-repeat;
     background-position: 10px 50%;
@@ -1279,7 +1363,6 @@ ul.photo_gallery_11 {
         -moz-border-radius: 100px;
         border-radius: 100px;
     }
-
 .post_details {
     width: 70%;
     float: left;
@@ -1691,7 +1774,7 @@ ul.comments {
 .cellContentFld {
     display: table-cell;
     border: 0;
-    width: 50%;
+    /*width: 65%;*/
     font-size: 14px;
     padding: 0px 0 0 5px;
     vertical-align: middle;
@@ -1700,7 +1783,7 @@ ul.comments {
 .cellContentVal {
     display: table-cell;
     border: 0;
-    width: 50%;
+    width: 35%;
     font-size: 14px;
     padding: 0px 0 0 5px;
     vertical-align: middle;
@@ -1902,6 +1985,30 @@ ul.comments {
         background-position: 50% 15px;
     }
 
+    .TechSupport-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Cafeteria-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Transport-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Diversity-icon a {
+        background-position: 50% 15px;
+    }
+
+    .News-icon a {
+        background-position: 50% 15px;
+    }
+
+    .Innovation-icon a {
+        background-position: 50% 15px;
+    }
+
     .Delivery-icon a {
         background-position: 50% 15px;
     }
@@ -1956,7 +2063,7 @@ ul.comments {
     .cellContentFld {
         display: table-cell;
         border: 0;
-        width: 50%;
+        /*width: 65%;*/
         font-size: 14px;
         padding: 0px 0 0 5px;
         vertical-align: middle;
@@ -1965,7 +2072,7 @@ ul.comments {
     .cellContentVal {
         display: table-cell;
         border: 0;
-        width: 50%;
+        width: 35%;
         font-size: 14px;
         padding: 0px 0 0 5px;
         vertical-align: middle;
