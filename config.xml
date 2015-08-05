@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.MobApp1" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
   <name></name>
-  <description>Company Suite</description>
+  <description>CompanySuite</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Digital Team </author>
   <content src="Login.html" />
   <icon src="/images/icons/AppIcon.png"/>
