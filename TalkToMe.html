@@ -1,17 +1,195 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿
+<!doctype HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
 <head>
-    <title>Voice</title>
-    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-    <script src='http://vws.responsivevoice.com/v/e?key=hYeykH52'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+    <title>Digital You</title>
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="cordova.js"></script>
+    <style>
+        .holder {
+            /*width: 850px;*/
+            border: 1px solid #C4CDE0;
+            border-radius: 2px;
+            /*margin: 0% 18%;*/
+            height: auto;
+            overflow: hidden;
+        }
+
+        /*.search-holder {
+            margin: 3px;
+            background: #D5B1CB;
+            border-bottom: 1px solid #C4CDE0;
+            height: 50px;
+        }*/
+        .search {
+            padding: 3%;
+            width: 80%;
+            margin: 0 0 5px 0;
+            border: 1px solid #3f3f3f;
+            /*background-color: #222222;*/
+            color: #ffffff;
+            background-color: #461438;
+        }
+
+        .title {
+            /*font-size: 16px;*/
+            font-weight: bold;
+            width: 100%;
+            color: #000;
+            /*margin-left: 20px;*/
+        }
+
+        .fl {
+            float: left;
+            line-height: 50px;
+        }
+
+        .textbox {
+            width: 100%;
+            padding: 0 0 15px 0;
+            vertical-align: top;
+            color: #ffffff;
+        }
+
+            .textbox img {
+                width: 10%;
+            }
+
+            .textbox input {
+                /*border: 1px solid #C4CDE0;
+            outline: medium none;
+            padding: 2px;
+            width: 190px;
+            /*font-size: 11px;*/
+                /*height: 22px;*/
+                width: 85%;
+                margin: 0 0 0 10px;
+                border: 1px solid #3f3f3f;
+                vertical-align: top;
+                /*background-color: #222222;*/
+                color: #ffffff;
+            }
+
+
+
+        .friend_holder {
+            width: 100%;
+            margin: 5px 0 5px 5px;
+        }
+
+        .friends {
+            width: 100%;
+        }
+
+        .name {
+            margin-left: 10px;
+        }
+
+            .name a {
+                /*font-size: 12px;
+                font-weight: bold;*/
+                color: #3B5998;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+                .name a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+
     <script type="text/javascript">
+
         function Loadurl(url) {
             window.location.replace(url);
-        }      
+        }
+        function LoadEmpurl(url, empNmae) {
+            window.localStorage.setItem("EmpName", empNmae);
+            window.location.replace(url);
+        }
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
+
+        }
+
     </script>
+
 </head>
-<body>
-    <input onclick="responsiveVoice.speak('Hello World');" type="button" value="Play" />
-    <a href="#" onclick="Loadurl('Enablers.html')">back</a>
+
+<body id="mobile_wrap" onload="LoadName()">
+    
+
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+        <nav class="list-nav-small">
+            <ul>
+                <li class="user-icon-small"><span id="lblUserName"></span></li>
+                <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
+                <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
+                <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
+               
+                <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <li class="companyHome-icon-small"><a href="#" onclick="Loadurl('Company_Home.html')" class="close-panel">Company Home</a></li>
+                <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
+                <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
+                <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Dashboard.html')" class="close-panel">Dashboard</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Maps.html')" class="close-panel">Maps</a></li>-->
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages">
+                <div data-page="projects" class="page no-toolbar no-navbar">
+                    <div class="page-content">
+                        <div class="navbarpages">
+                            <div class="navbar_back_link"><a href="Enablers.html"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_page_center">Talk To Me</div>
+                            <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
+                        </div>
+                        <div id="pages_maincontent">
+
+                            <input onclick="responsiveVoice.speak('Hello World');" type="button" value="Play" />
+
+
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/email.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src='http://vws.responsivevoice.com/v/e?key=hYeykH52'></script>
+    
 </body>
+
 </html>
