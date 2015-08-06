@@ -109,12 +109,26 @@
                 }
     </style>
 
-    
+    <script type="text/javascript">
+
+        function Loadurl(url) {
+            window.location.replace(url);
+        }
+        function LoadEmpurl(url, empNmae) {
+            window.localStorage.setItem("EmpName", empNmae);
+            window.location.replace(url);
+        }
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
+
+        }
+
+    </script>
 
 </head>
 
 <body id="mobile_wrap" onload="LoadName()">
-
+    
 
     <div class="statusbar-overlay"></div>
 
@@ -127,7 +141,7 @@
                 <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
-
+               
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
                 <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <li class="companyHome-icon-small"><a href="#" onclick="Loadurl('Company_Home.html')" class="close-panel">Company Home</a></li>
@@ -147,15 +161,18 @@
                 <div data-page="projects" class="page no-toolbar no-navbar">
                     <div class="page-content">
                         <div class="navbarpages">
-                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('Enablers.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_back_link"><a href="Enablers.html"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
                             <div class="navbar_page_center">Talk To Me</div>
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
                         <div id="pages_maincontent">
-                            <input onclick="responsiveVoice.speak('Hello World');" type="button" value="Play"/>
-                            <p id="readMe">
-                                Excellent attendance is an expectation of all employees of Your Company, Inc. Daily attendance is especially important for hourly employees whose customers and coworkers have the expectation of on-time product shipping and delivery.
-                            </p>
+
+                            <input onclick="responsiveVoice.speak('Hello World');" type="button" value="Play" />
+
+
+                            
+
+
                         </div>
                     </div>
                 </div>
@@ -170,29 +187,9 @@
     <script type="text/javascript" src="js/email.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-    <script src="js/responsivevoice.js"></script>
-    <!--<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-    <script src='http://vws.responsivevoice.com/v/e?key=hYeykH52'></script>-->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            
-
-        });
-        function LoadName() {
-            $("#lblUserName").text(window.localStorage.getItem("Username"));
-            responsiveVoice.speak("Welcome" + window.localStorage.getItem("Username"));           
-        }
-
-        function Loadurl(url) {
-            window.location.replace(url);
-        }
-        function LoadEmpurl(url, empNmae) {
-            window.localStorage.setItem("EmpName", empNmae);
-            window.location.replace(url);
-        }
-       
-    </script>
-
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src='http://vws.responsivevoice.com/v/e?key=hYeykH52'></script>
+    
 </body>
 
 </html>
