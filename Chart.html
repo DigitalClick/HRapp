@@ -510,7 +510,7 @@
                             strokeColor: "rgba(220,220,220,0.8)",
                             highlightFill: "rgba(220,220,220,0.75)",
                             highlightStroke: "rgba(220,220,220,1)",
-                            data: [987,614,284,117,89,18]
+                            data: [987, 614, 284, 117, 89, 18]
                         },
                         {
                             label: "Lateral",
@@ -518,7 +518,7 @@
                             strokeColor: "rgba(151,187,205,0.8)",
                             highlightFill: "rgba(151,187,205,0.75)",
                             highlightStroke: "rgba(151,187,205,1)",
-                            data: [296,184,85,35,27,5]
+                            data: [296, 184, 85, 35, 27, 5]
                         }
                     ]
                 };
@@ -531,7 +531,7 @@
                             strokeColor: "rgba(220,220,220,0.8)",
                             highlightFill: "rgba(220,220,220,0.75)",
                             highlightStroke: "rgba(220,220,220,1)",
-                            data: [587,1103,419]
+                            data: [587, 1103, 419]
                         },
                         {
                             label: "Lateral",
@@ -539,7 +539,7 @@
                             strokeColor: "rgba(151,187,205,0.8)",
                             highlightFill: "rgba(151,187,205,0.75)",
                             highlightStroke: "rgba(151,187,205,1)",
-                            data: [176,331,126]
+                            data: [176, 331, 126]
                         }
                     ]
                 };
@@ -560,7 +560,7 @@
                             strokeColor: "rgba(151,187,205,0.8)",
                             highlightFill: "rgba(151,187,205,0.75)",
                             highlightStroke: "rgba(151,187,205,1)",
-                            data: [260,219,59,95]
+                            data: [260, 219, 59, 95]
                         }
                     ]
                 };
@@ -889,7 +889,7 @@
             var myPieChart = new Chart(document.getElementById("pieChart").getContext("2d")).Pie(pieData);
             $("#legendPie").append(myPieChart.generateLegend());
             //Line Chart
-           
+
             if (window.localStorage.getItem("PageName") != "InitiativePerformance.html") {
                 var options = {
                     scaleShowGridLines: false
@@ -900,8 +900,8 @@
             else {
                 $("#MonthlyGraph").hide();
             }
-                
-          
+
+
             //Bar Chart
             var options = {
                 scaleShowGridLines: false
@@ -948,9 +948,10 @@
                 <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
-                 <!--<li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>-->
+                <!--<li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>-->
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
                 <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <li class="companyHome-icon-small"><a href="#" onclick="Loadurl('Company_Home.html')" class="close-panel">Company Home</a></li>
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
                 <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
                 <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
