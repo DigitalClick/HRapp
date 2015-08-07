@@ -17,10 +17,11 @@
   <preference name="Fullscreen" value="false" />
   <preference name="ShowTitle" value="False" />
   <preference name="Orientation" value="portrait" />
-
+  <preference name="apiKey" value="4b4d30a41960749591a32924f6ec2e41" />
 
   
   <plugin name="Media" value="org.apache.cordova.AudioHandler" />
-
+  <gap:plugin name="com.aserputko.speech.speechrecognition" version="0.1.0" />
+  <gap:plugin name="com.phonegap.plugins.speech.SpeechRecognizer" version="0.1.0" />
   <vs:platformSpecificValues />
 </widget>

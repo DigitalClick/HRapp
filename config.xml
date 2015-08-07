@@ -17,8 +17,12 @@
   <preference name="Fullscreen" value="false" />
   <preference name="ShowTitle" value="False" />
   <preference name="Orientation" value="portrait" />
+  <preference name="apiKey" value="4b4d30a41960749591a32924f6ec2e41" />
+
   <vs:plugin name="com.phonegap.plugins.speech" version="1.0.0" />
   <vs:plugin name="org.apache.cordova.media" version="0.2.13" />
+  <gap:plugin name="com.phonegap.plugins.speech" version="1.0.0" />
+  <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
   <!--
   <feature name="http://api.phonegap.com/1.0/battery"/>
   <feature name="http://api.phonegap.com/1.0/camera"/>
