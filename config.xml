@@ -87,7 +87,7 @@
   <gap:plugin name="org.apache.cordova.vibration" />
 
   <gap:plugin name="com.aserputko.speech.speechrecognition" version="0.1.0" />
-  <gap:plugin name="com.phonegap.plugins.speech.SpeechRecognizer" version="0.1.0" />
+
   
   <!-- Third party plugins -->
   <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
