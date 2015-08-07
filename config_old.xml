@@ -4,8 +4,8 @@
   <description>Digital Click</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team </author>
   <content src="Login.html" />
-  <icon src="/images/icons/AppIcon.png" />
-  <access origin="*" launch-external="yes" />
+  <icon src="/images/icons/AppIcon.png"/>
+  <access origin=".*" launch-external="yes" />
   <access origin="tel:*" launch-external="yes" />
   <access origin="mailto:*" launch-external="yes" />
   <access origin="sms:*" launch-external="yes" />
@@ -17,18 +17,20 @@
   <preference name="Fullscreen" value="false" />
   <preference name="ShowTitle" value="False" />
   <preference name="Orientation" value="portrait" />
-  <vs:plugin name="com.phonegap.plugins.speech" version="1.0.0" />
-  <vs:plugin name="org.apache.cordova.media" version="0.2.13" />
+  <preference name="permissions" value="none"/>
   <feature name="http://api.phonegap.com/1.0/battery"/>
   <feature name="http://api.phonegap.com/1.0/camera"/>
-  <feature name="http://api.phonegap.com/1.0/contacts"/>
-  <feature name="http://api.phonegap.com/1.0/file"/>
-  <feature name="http://api.phonegap.com/1.0/geolocation"/>
-  <feature name="http://api.phonegap.com/1.0/media"/>
-  <feature name="http://api.phonegap.com/1.0/network"/>
-  <feature name="http://api.phonegap.com/1.0/notification"/>
+ <feature name="http://api.phonegap.com/1.0/contacts"/>
+ <feature name="http://api.phonegap.com/1.0/file"/>
+ <feature name="http://api.phonegap.com/1.0/geolocation"/>
+ <feature name="http://api.phonegap.com/1.0/media"/>
+ <feature name="http://api.phonegap.com/1.0/network"/>
+ <feature name="http://api.phonegap.com/1.0/notification"/>
   <feature name="Capture">
         <param name="ios-package" value="CDVCapture" />
   </feature>
-   <vs:platformSpecificValues />
+
+  <vs:plugin name="com.phonegap.plugins.speech" version="1.0.0" />
+  <vs:platformSpecificValues />
+ 
 </widget>
