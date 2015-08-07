@@ -128,9 +128,6 @@
     <string>100</string>
   </gap:config-file>
 
-
-  <vs:plugin name="com.phonegap.plugins.speech" version="1.0.0" />
-  <vs:plugin name="org.apache.cordova.media" version="0.2.13" />
   
   <!--
         Define access to external domains.
