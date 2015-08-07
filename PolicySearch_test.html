@@ -16,6 +16,14 @@
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="cordova.js"></script>
+    <script src="www/SpeechGrammar.js"></script>
+    <script src="www/SpeechGrammarList.js"></script>
+    <script src="www/SpeechRecognition.js"></script>
+    <script src="www/SpeechRecognitionAlternative.js"></script>
+    <script src="www/SpeechRecognitionError.js"></script>
+    <script src="www/SpeechRecognitionEvent.js"></script>
+    <script src="www/SpeechRecognitionResult.js"></script>
+    <script src="www/SpeechRecognitionResultList.js"></script>
     <style>
         .holder {
             /*width: 850px;*/
@@ -168,7 +176,7 @@
                 <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
                 <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
-               
+
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
                 <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <li class="companyHome-icon-small"><a href="#" onclick="Loadurl('Company_Home.html')" class="close-panel">Company Home</a></li>
@@ -199,7 +207,8 @@
                             <div class="search-holder">
                                 <div class="title fl">Enter Policy/Number</div>
                                 <div class="textbox fl">
-                                    <a href="#" onclick="recognizeSpeech();"><img src="images/icons/black/microphone.png" /></a>
+                                    <a href="#" onclick="recognizeTalk()"><img src="images/icons/black/microphone.png" /></a>       
+                                    <a href="#" onclick="recognition.start();"><img src="images/icons/black/microphone.png" /></a>  
                                     <input id="search" type="text" name="search" class="search" value="" placeholder="Search For Policies" autocomplete="off">
                                 </div>
                             </div>
@@ -451,8 +460,10 @@
     <script type="text/javascript" src="js/email.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-    <script>
+    <script type="text/javascript">
+       
         $(document).ready(function () {
+
             var divAcct = document.getElementById("frndsList");
             $(".search").keyup(function () {
                 var str = $(".search").val();
@@ -493,6 +504,20 @@
 
             });
         });
+        function recognizeTalk() {            
+            recognition.start();           
+            var recognition = new SpeechRecognition();            
+            recognition.onresult = function (event) {
+                if (event.results.length > 0) {
+                    q.value = event.results[0][0].transcript;
+                    q.form.submit();
+                    alert(q.value);
+                    $("#search").val(q.value);
+                    $("#search").focus();
+                }
+            }
+        }
+       
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-19096935-1']);
         _gaq.push(['_trackPageview']);
