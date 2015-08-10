@@ -1,0 +1,649 @@
+﻿
+<!doctype HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+    <title>Digital You</title>
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/index.js"></script>
+    <style>
+        .holder {
+            /*width: 850px;*/
+            border: 1px solid #C4CDE0;
+            border-radius: 2px;
+            /*margin: 0% 18%;*/
+            height: auto;
+            overflow: hidden;
+        }
+
+        /*.search-holder {
+                margin: 3px;
+                background: #D5B1CB;
+                border-bottom: 1px solid #C4CDE0;
+                height: 50px;
+            }*/
+        .search {
+            padding: 3%;
+            width: 100%;
+            margin: 0 0 5px 0;
+            border: 1px solid #3f3f3f;
+            /*background-color: #222222;*/
+            color: #ffffff;
+            background-color: #461438;
+        }
+
+        .title {
+            /*font-size: 16px;*/
+            font-weight: bold;
+            width: 100%;
+            color: #000;
+            /*margin-left: 20px;*/
+        }
+
+        .fl {
+            float: left;
+            line-height: 50px;
+        }
+
+        .textbox {
+            width: 100%;
+            padding: 0 0 15px 0;
+            vertical-align: top;
+            color: #ffffff;
+        }
+
+            .textbox img {
+                width: 10%;
+            }
+
+            .textbox input {
+                /*border: 1px solid #C4CDE0;
+                outline: medium none;
+                padding: 2px;
+                width: 190px;
+                /*font-size: 11px;*/
+                /*height: 22px;*/
+                width: 70%;
+                margin: 0 0 0 10px;
+                border: 1px solid #3f3f3f;
+                vertical-align: top;
+                /*background-color: #222222;*/
+                color: #ffffff;
+            }
+
+
+
+        .friend_holder {
+            width: 100%;
+            margin: 5px 0 5px 5px;
+        }
+
+        .friends {
+            width: 100%;
+        }
+
+        .name {
+            margin-left: 10px;
+        }
+
+            .name a {
+                /*font-size: 12px;
+                    font-weight: bold;*/
+                color: #3B5998;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+                .name a:hover {
+                    text-decoration: underline;
+                }
+
+
+        .fb {
+            float: left;
+            position: absolute;
+            display: inline;
+            /*bottom: 0;*/
+            right: 80%;
+            width: 10%;
+        }
+
+            .fb img {
+                width: 70%;
+            }
+
+        .logo {
+            /*bottom: 0;*/
+            display: inline;
+            left: 0;
+            position: absolute;
+            width: 10%;
+        }
+
+            .logo img {
+                width: 70%;
+            }
+
+        .top {
+            height: 15px;
+            margin: 0;
+            padding: 3% 0;
+            position: relative;
+        }
+    </style>
+
+
+
+
+
+
+
+
+</head>
+
+<body id="mobile_wrap" onload="LoadName()">
+    <script type="text/javascript">
+
+        function onDeviceReady() {
+            console.log("Device is ready");
+        }
+        function recognizeSpeech() {
+            var maxMatches = 1;
+            var promptString = "Speak now"; // optional
+            var language = "en-US";                     // optional
+            window.plugins.speechrecognizer.startRecognize(function (result) {
+                //alert(result);
+                $("#search").val(result);
+                $("#search").focus();
+            }, function (errorMessage) {
+                console.log("Error message: " + errorMessage);
+            }, maxMatches, promptString, language);
+        }
+        // Show the list of the supported languages
+        function getSupportedLanguages() {
+            window.plugins.speechrecognizer.getSupportedLanguages(function (languages) {
+                // display the json array
+                alert(languages);
+            }, function (error) {
+                alert("Could not retrieve the supported languages : " + error);
+            });
+        }
+        document.addEventListener("deviceready", onDeviceReady, true);
+    </script>
+
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+        <nav class="list-nav-small">
+            <ul>
+                <li class="user-icon-small"><span id="lblUserName"></span></li>
+                <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
+                <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
+                <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
+
+                <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <li class="companyHome-icon-small"><a href="#" onclick="Loadurl('Company_Home.html')" class="close-panel">Company Home</a></li>
+                <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
+                <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
+                <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Dashboard.html')" class="close-panel">Dashboard</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Maps.html')" class="close-panel">Maps</a></li>-->
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages">
+                <div data-page="projects" class="page no-toolbar no-navbar">
+                    <div class="page-content">
+                        <div class="navbarpages">
+                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('Enablers.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_page_center">Talk To Me</div>
+                            <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
+                        </div>
+                        <div id="pages_maincontent">
+                            <div class="search-holder">
+                                <div class="title fl">Enter / Talk</div>
+                                <div class="textbox fl">
+                                    <a href="#" onclick="recognizeSpeech();"><img src="images/icons/black/microphone.png" /></a>
+                                    <input id="search" type="text" name="search" class="search" value="" placeholder="Search" autocomplete="off">
+                                    <a href="#" onclick="ClickGo();"><img src="images/icons/black/GO.png" /></a>
+                                   
+                                </div>
+                            </div>
+                            <div class="page_single">
+
+                                <div class="custom-accordion accordion-list">
+
+                                    <div id="frndsList" class="friends" style="display:none;">
+
+                                        <div class="friend_holder fl" id="PA001 - Basic Policy">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe1')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>                                                        
+                                                    </div>
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PA001 - Basic Policy</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+                                                        <p id="readMe1">
+                                                            Excellent attendance is an expectation of all employees of Your Company, Inc. Daily attendance is especially important for hourly employees whose customers and coworkers have the expectation of on-time product shipping and delivery.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PA002 - Attendance Bonus">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe2')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+                                                    <!--<input onclick="ReadText('readMe2')" type="button" value="Play" /><input onclick="    StopPlaying()" type="button" value="Stop" />-->
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PA002 - Attendance Bonus</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+                                                        <p id="readMe2">
+                                                            Life events can interfere with work attendance. However, we need employees to use as few emergency personal hours as are necessary and to avoid tardies so that we can operate the business in an orderly and efficient manner.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PA003 -Family and Medical">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe3')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PA003 -Family and Medical</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+                                                        <p id="readMe3">
+                                                            If you or an immediate family member has a recurring medical condition that results in frequent absences, you may qualify for unpaid leave under the FMLA. Please refer to the separate policy covering FMLA.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PA004 - Emergency Personal">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe4')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PA004 - Emergency Personal </span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+                                                        <p id="readMe4">
+                                                            Employees accrue 2.15 hours of emergency personal time per pay period. On an annual basis, this equates to the equivalent of 56 hours. Employees may use emergency personal time up to 56 hours.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PI001 - Software Access security">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe5')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PI001 - Software Access </span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe5">
+                                                            Software needed, in addition to the Microsoft Office suite of products, must be authorized by your supervisor and downloaded by the IT department. If you need access to software or websites, not currently on the Company network, talk with your supervisor and consult with the IT department.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PI002 - Company Owned security">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe6')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PI002 - Company Owned</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe6">
+                                                            Any device or computer including, but not limited to, desk phones, cell phones, tablets, laptops, desktop computers, and iPads that the Company provides for your use, should only be used for Company business.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PI003 - Internet use security">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe7')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PI003 - Internet use</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe7">
+                                                            Internet use, on Company time, is authorized to conduct Company business only. Internet use brings the possibility of breaches to the security of confidential Company information. Internet use also creates the possibility of contamination to our system via viruses or spyware.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PI004 - Social Media security">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe8')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PI004 - Social Media</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe8">
+                                                            Social media participation from work devices or during working hours, social media content that discriminates against any protected classification including age, race, color, religion, sex, national origin, disability, or genetic information is prohibited. It is our company policy to also recognize sexual preference and weight as qualifying for discrimination protection.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PV001 - Paid Time Off">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe9')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PV001 - Paid Time Off</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe9">
+                                                            Each full time employee will accrue PTO bi-weekly in hourly increments based on their length of service as defined below. PTO is added to the employee's PTO bank when the bi-weekly paycheck is issued.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PV002 - Paid Sick Days">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe10')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PV002 - Paid Sick Days</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe10">
+                                                            Paid sick days are time off from work that an organization voluntarily provides employees as a benefit. The number of paid sick days is often accrued by employees based on years of service to the organization and the level of their position.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PV003 - Paid Vacation Days">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe11')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PV003 - Paid Vacation Days</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe11">
+                                                            Paid vacation days are time off work an organization voluntarily provides employees as a benefit. The number of paid vacation days is generally accrued by employees based on years of service to the organization and the level of their position.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend_holder fl" id="PV004 - Paid Personal Days">
+                                            <div class="name fl">
+                                                <div class="accordion-item">
+                                                    <div class="top">
+                                                        <a href="#" onclick="ReadText('readMe12')" class="logo"><img src="images/icons/black/play.png" title="Play" class="action1 open-popup" data-popup=".popup-contact"></a>
+                                                        
+                                                    </div>
+
+                                                    <div class="accordion-item-toggle">
+                                                        <i class="icon icon-plus">+</i>
+                                                        <i class="icon icon-minus">-</i>
+                                                        <span>PV004 - Paid Personal Days</span>
+                                                    </div>
+                                                    <div class="accordion-item-content">
+
+                                                        <p id="readMe12">
+                                                            Paid personal days are time off from work that an organization voluntarily provides employees as a benefit. The number of paid personal days is often accrued by employees based on years of service to the organization and the level of their position.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<input onclick="ReadText('readMe12')" type="button" value="Test" />
+                            <p id="readMe">
+                                Excellent attendance is an expectation of all employees of Your Company, Inc. Daily attendance is especially important for hourly employees whose customers and coworkers have the expectation of on-time product shipping and delivery.
+                            </p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup-contact">
+        <div class="content-block">
+            <h4>Interactive Voice</h4>   
+            <div class="popupImg">
+                <img src="images/icons/white/VoiceSpeaker.png">    
+            </div> 
+               
+            
+            <div id="divVoiceText">
+
+            </div>
+            <div class="close_popup_button"><a href="#" class="close-popup" onclick="StopPlaying()">Stop Playing</a></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/email.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script src="js/responsivevoice.js"></script>
+    <!--<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src='http://vws.responsivevoice.com/v/e?key=hYeykH52'></script>-->
+    <script type="text/javascript">
+
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));          
+        }
+        function SpeakName() {         
+            responsiveVoice.speak("Welcome" + window.localStorage.getItem("Username"));          
+        }
+        function ReadText(id) {
+            var e1 = $("#" + id);
+            //alert(e1.text().trim());
+            $('#divVoiceText').empty();
+            $('#divVoiceText').text(e1.text().trim());
+            responsiveVoice.speak(e1.text().trim());
+        }
+        function StopPlaying() {
+            $('#divVoiceText').empty();
+            responsiveVoice.speak("");
+        }
+        function Loadurl(url) {
+            window.location.replace(url);
+        }
+        function LoadEmpurl(url, empNmae) {
+            window.localStorage.setItem("EmpName", empNmae);
+            window.location.replace(url);
+        }
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            //var divAcct = document.getElementById("frndsList");
+            //$("#btnGO").click(function () {
+            //    var str = $(".search").val();
+            //    if (str == "") {
+            //        divAcct.style.display = "none";
+            //    }
+            //    else {
+            //        $(".friends .friend_holder").each(function (index) {
+            //            if ($(this).attr("id")) {
+            //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+            //                    $(this).fadeOut("fast");
+            //                } else {
+            //                    $(this).fadeIn("slow");
+            //                }
+            //                divAcct.style.display = "block";
+            //            }
+            //        });
+            //    }
+
+            //});
+            SpeakName();
+            //$(".search").focus(function () {
+            //    var str = $(".search").val();
+            //    if (str == "") {
+            //        divAcct.style.display = "none";
+            //    }
+            //    else {
+            //        $(".friends .friend_holder").each(function (index) {
+            //            if ($(this).attr("id")) {
+            //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+            //                    $(this).fadeOut("fast");
+            //                } else {
+            //                    $(this).fadeIn("slow");
+            //                }
+            //                divAcct.style.display = "block";
+            //            }
+            //        });
+            //    }
+
+            //});
+        });
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-19096935-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        function ClickGo()
+        {
+            var divAcct = document.getElementById("frndsList");
+            var str = $(".search").val();
+                if (str == "") {
+                    divAcct.style.display = "none";
+                }
+                else {
+                    $(".friends .friend_holder").each(function (index) {
+                        if ($(this).attr("id")) {
+                            if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+                                $(this).fadeOut("fast");
+                            } else {
+                                $(this).fadeIn("slow");
+                            }
+                            divAcct.style.display = "block";
+                        }
+                    });
+                }
+        }
+    </script>
+</body>
+
+</html>
