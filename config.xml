@@ -5,11 +5,11 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
-  <name>DigitalClick</name>
-  <description>Digital Click</description>
+  <name>GoDigital</name>
+  <description>Go Digital</description>
 
-  <author href="http://phonegap.com" email="support@phonegap.com">
-    PhoneGap Team
+  <author href="http://GoDigital" email="support@GoDigital.com">
+    GoDigital Team
   </author>
   <content src="Login.html" />
   <!--
@@ -75,6 +75,7 @@
   <gap:plugin name="org.apache.cordova.battery-status" />
   <gap:plugin name="org.apache.cordova.camera" />
   <gap:plugin name="org.apache.cordova.media-capture" />
+  <gap:plugin name="org.apache.cordova.media" />
   <gap:plugin name="org.apache.cordova.console" />
   <gap:plugin name="org.apache.cordova.contacts" />
   <gap:plugin name="org.apache.cordova.device" />
