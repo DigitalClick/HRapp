@@ -34,8 +34,8 @@
             document.location.href = "sms:" + phoneNo;
         }
         function LoadChat(address) {
-            navigator.startApp.start([["action", "VIEW"], ["skype:" + address]]);
-            //document.location.href = "sip:" + address;
+            //navigator.startApp.start([["action", "VIEW"], ["skype:" + address]]);
+            document.location.href = "sip:" + address;
         }
         function LoadName() {
             $("#lblUserName").text(window.localStorage.getItem("Username"));

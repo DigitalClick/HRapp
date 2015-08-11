@@ -34,9 +34,9 @@
         function LoadSMS(phoneNo) {
             document.location.href = "sms:" + phoneNo;
         }
-        function LoadChat(address) {          
-            //navigator.startApp.start([["action", "VIEW"], ["lync:" + address]]);                      
-            navigator.startApp.start([["action", "VIEW"], ["skype:" + address]]);
+        function LoadChat(address) {
+            //navigator.startApp.start([["action", "VIEW"], ["skype:" + address]]);
+            document.location.href = "sip:" + address;
         }
     </script>
 
