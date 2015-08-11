@@ -35,7 +35,8 @@
             document.location.href = "sms:" + phoneNo;
         }
         function LoadChat(address) {
-            document.location.href = "sip:" + address;
+            //document.location.href = "sip:" + address;
+            navigator.startApp.start([["action", "VIEW"], ["skype:" + address]]);
         }
 
     </script>

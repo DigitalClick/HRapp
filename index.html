@@ -34,17 +34,10 @@
         function LoadSMS(phoneNo) {
             document.location.href = "sms:" + phoneNo;
         }
-        function LoadChat(address) {
-            document.location.href = "im:<sip:" + address + ">";
+        function LoadChat(address) {          
+            //navigator.startApp.start([["action", "VIEW"], ["lync:" + address]]);                      
+            navigator.startApp.start([["action", "VIEW"], ["skype:" + address]]);
         }
-        //function LoadChat1(address) {
-        //    document.location.href = "sip:" + address;
-
-        //}
-        //function LoadChat2(address) {
-        //    window.location = "sip:" + address;
-
-        //}
     </script>
 
 </head>
@@ -60,7 +53,7 @@
                 <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
                 <!--<li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>-->
                 <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
-                <li class="quicklink-icon-small"><a href="#" onclick="Loadurl('QuickLinks.html')" class="close-panel">Quick Links</a></li>
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
                 <li class="companyHome-icon-small"><a href="#" onclick="Loadurl('Company_Home.html')" class="close-panel">Company Home</a></li>
                 <!--<li class="video-icon-small"><a href="#" onclick="Loadurl('Voice.html')" class="close-panel">Voice</a></li>-->
                 <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
@@ -136,10 +129,10 @@
                                 <!--<li class="lock-icon"><a href="#" data-panel="right" class="open-panel">Account</a></li>-->
                                 <li class="dashboard-icon"><a href="#" onclick="Loadurl('Dashboard.html')">Dashboard</a></li>
                                 <li class="events-icon"><a href="Events.html">Events</a></li>
-                                <li class="enablers-icon"><a href="#" onclick="Loadurl('Enablers.html')">Enablers</a></li>
+                                <li class="enablers-icon"><a href="Enablers.html">Enablers</a></li>
                                 <li class="Diversity-icon"><a href="Diversity.html">Diversity</a></li>
                                 <li class="News-icon"><a href="News.html">News</a></li>
-                                <li class="Innovation-icon"><a href="Innovation.html">Innovation</a></li>
+                                <li class="Innovation-icon"><a href="Innovation.html">Innovation</a></li>                                
                             </ul>
                         </nav>
                     </div>
