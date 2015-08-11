@@ -14,6 +14,30 @@
     <link rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
+    <script src="js/speech.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        #text {
+            font-size: 80px;
+            letter-spacing: -3px;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            top: 40%;
+        }
+
+        p {
+            font-weight: bold;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
 
@@ -65,12 +89,13 @@
                 <div data-page="projects" class="page no-toolbar no-navbar">
                     <div class="page-content">
                         <div class="navbarpages">
-                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('QuickLink.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('QuickLinks.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
                             <div class="navbar_page_center">Voice</div>
                             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
                         </div>
                         <div id="pages_maincontent">
                             <button onclick="captureAudio();">Capture Audio</button> <br>
+                            <h1 id="text">Please allow access to mic.</h1>
                         </div>
                     </div>
                 </div>
@@ -97,6 +122,12 @@
                 for (i = 0, len = mediaFiles.length; i < len; i += 1) {
                     //uploadFile(mediaFiles[i]);
                     AlertFilename(mediaFiles[i]);
+                    var rec = this.recognition,
+                    self = this
+
+                    rec.continuous = self.options.continuous;
+                    rec.interimResults = self.options.interimResults;
+                    alert(rec.interimResults);
                 }
             }
 
@@ -109,10 +140,34 @@
 
             // A button will call this function
             //
-            function captureAudio() {                
+            function captureAudio() {
                 // Launch device audio recording application,
                 // allowing user to capture up to 2 audio clips
+                var text = document.getElementById('text')
+
+                var speech = new Speech({
+                    debugging: true,
+                    continuous: true,
+                    interimResults: true,
+                    autoRestart: true
+                })
+
+                speech
+                    .on('start', function () {
+                        text.innerHTML = 'Come on, talk to me.'
+                    })
+                    .on('end', function () {
+                        text.innerHTML = 'Stopped listening.'
+                    })
+                    .on('interimResult', function (msg) {
+                        text.innerHTML = msg
+                    })
+                    .on('finalResult', function (msg) {
+                        text.innerHTML = msg
+                    })
+                    .start()
                 navigator.device.capture.captureAudio(captureSuccess, captureError, { limit: 2 });
+
             }
 
             // Upload files to server
@@ -132,10 +187,35 @@
                     },
                     { fileName: name });
             }
-            function AlertFilename(mediaFile)
-            {
+            function AlertFilename(mediaFile) {
                 alert(mediaFile);
             }
+
+        </script>
+        <script type="text/javascript">
+            var text = document.getElementById('text')
+
+            var speech = new Speech({
+                debugging: true,
+                continuous: true,
+                interimResults: true,
+                autoRestart: false
+            })
+
+            speech
+                .on('start', function () {
+                    text.innerHTML = 'Come on, talk to me.'
+                })
+                .on('end', function () {
+                    text.innerHTML = 'Stopped listening.'
+                })
+                .on('interimResult', function (msg) {
+                    text.innerHTML = msg
+                })
+                .on('finalResult', function (msg) {
+                    text.innerHTML = msg
+                })
+                .start()
 
         </script>
 </body>
