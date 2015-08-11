@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="com.phonegap.helloworld" version="2.0.0" xmlns="http://www.w3.org/ns/widgets">
-  <name>GoDigital</name>
-  <description>GoDigital</description>
-  <author href="http://GoDigital.com" email="support@GoDigital.com">
-    GoDigital Team
+  <name>DigitalClick</name>
+  <description>Digital Click</description>
+  <author href="http://phonegap.com" email="support@phonegap.com">
+    PhoneGap Team
   </author>
   <content src="Login.html" />
-  <icon src="/images/icons/AppIcon.png" />
   <access origin="*" />
   <access origin="tel:*" launch-external="yes" />
   <access origin="mailto:*" launch-external="yes" />
@@ -14,15 +13,6 @@
   <access origin="im:*" launch-external="yes" />
   <access origin="sip:*" launch-external="yes" />
   <access origin="skype:*" />
-
-
-  
-  <feature name="Capture">
-        <param name="ios-package" value="CDVCapture" />
-    <plugin name="Media" value="CDVSound" />
-  </feature>
-  <plugin name="Media" value="org.apache.cordova.AudioHandler" />
-  
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="8.0" />
   <preference name="windows-phone-target-version" value="8.1" />
@@ -47,14 +37,4 @@
   <vs:plugin name="org.apache.cordova.media" version="0.2.13" />
   <vs:plugin name="com.lampa.startapp" version="0.0.4" />
   <vs:platformSpecificValues />
-
-
-  <platform name="android">
-    <allow-intent href="market:*" />
-  </platform>
-  <platform name="ios">
-    <allow-intent href="itms:*" />
-    <allow-intent href="itms-apps:*" />
-  </platform>
-  
 </widget>
