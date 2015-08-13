@@ -36,7 +36,7 @@
         function LoadChat(address) {
             //navigator.startApp.start([["action", "VIEW"], ["skype:" + address]]);
             //document.location.href = "sip:" + address;
-            document.location.href = "skype:" + address;
+            document.location.href = "skype:live:"+ address +"?chat";
         }
         function LoadName() {
             $("#lblUserName").text(window.localStorage.getItem("Username"));
@@ -187,7 +187,7 @@
         <div class="content-block">
             <h4>Contact</h4>
             <ul class="social_share">
-                <li><a href="#" onclick="LoadChat('test.test@company.com')"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
+                <li><a href="#" onclick="LoadChat('test.123')"><img src="images/icons/white/Contact_Chat.png" alt="" title="" /></a></li>
                 <li><a href="#" onclick="LoadDialer('1234567890')"><img src="images/icons/white/Contact_Call.png" alt="" title="" /></a></li>
                 <li><a href="#" onclick="LoadMailer('test@test.com')"><img src="images/icons/white/Contact_Email.png" alt="" title="" /></a></li>
             </ul>
