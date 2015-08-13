@@ -13,7 +13,7 @@
   <access origin="sms:*" launch-external="yes" />
   <access origin="im:*" launch-external="yes" />
   <access origin="sip:*" launch-external="yes" />
-  <access origin="skype:*" />
+  <access origin="skype:*" launch-external="yes" />
 
 
   
