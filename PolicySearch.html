@@ -236,7 +236,7 @@
                                 <div class="title fl">Enter Policy/Number</div>
                                 <div class="textbox fl">
                                     <a href="#" onclick="recognizeSpeech();"><img src="images/icons/black/microphone.png" /></a>
-                                    <input id="search" autocomplete="off">
+                                    <input id="search" type="text" name="search" class="search" value="" placeholder="Search" autocomplete="off">
                                     <a href="#" onclick="ClickGo();"><img src="images/icons/black/GO.png" /></a>
                                 </div>
                             </div>
@@ -257,14 +257,12 @@
                             <div class="friend_holder fl" id="PA004 - Emergency Personal">
                                 <div class="name fl"><a href="#">PA004 - Emergency Personal</a></div>
                             </div>-->
-                            <!--</div>-->
+                            <!--</div>-->                           
 
+                            <div id="frndsList" class="friends" style="display:none;">
+                                <div class="page_single">
 
-                            <div class="page_single">
-
-                                <div class="custom-accordion accordion-list">
-
-                                    <div id="frndsList" class="friends" style="display:none;">
+                                    <div class="custom-accordion accordion-list">
 
                                         <div class="friend_holder fl" id="PA001 - Basic Policy">
                                             <div class="name fl">
@@ -472,8 +470,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
