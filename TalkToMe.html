@@ -41,8 +41,8 @@
             margin: 0 0 5px 0;
             border: 1px solid #3f3f3f;
             /*background-color: #222222;*/
-            color: #461438;
-            background-color: #ffffff ;
+            color: #ffffff;
+            background-color: #461438;
         }
 
         .title {
@@ -62,7 +62,7 @@
             width: 100%;
             padding: 0 0 15px 0;
             vertical-align: top;
-            /*color: #ffffff;*/
+            color: #ffffff;
         }
 
             .textbox img {
@@ -81,7 +81,7 @@
                 border: 1px solid #3f3f3f;
                 vertical-align: top;
                 /*background-color: #222222;*/
-                /*color: #ffffff;*/
+                color: #ffffff;
             }
 
 
@@ -224,7 +224,7 @@
                                 <div class="title fl">Enter / Talk</div>
                                 <div class="textbox fl">
                                     <a href="#" onclick="recognizeSpeech();"><img src="images/icons/black/microphone.png" /></a>
-                                    <input id="search" type="text" name="search" class="search" value="" placeholder="Search" autocorrect="off" autocapitalize="off" autocomplete="off">
+                                    <input id="search" type="text" name="search" class="search" value="" placeholder="Search" autocomplete="off">
                                     <a href="#" onclick="ClickGo();"><img src="images/icons/black/GO.png" /></a>
                                    
                                 </div>
@@ -686,65 +686,65 @@
 
     </script>
     <script>
-        $(document).ready(function () {
-            //var divAcct = document.getElementById("frndsList");
-            //$("#btnGO").click(function () {
-            //    var str = $(".search").val();
-            //    if (str == "") {
-            //        divAcct.style.display = "none";
-            //    }
-            //    else {
-            //        $(".friends .friend_holder").each(function (index) {
-            //            if ($(this).attr("id")) {
-            //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
-            //                    $(this).fadeOut("fast");
-            //                } else {
-            //                    $(this).fadeIn("slow");
-            //                }
-            //                divAcct.style.display = "block";
-            //            }
-            //        });
-            //    }
+        //$(document).ready(function () {
+        //    //var divAcct = document.getElementById("frndsList");
+        //    //$("#btnGO").click(function () {
+        //    //    var str = $(".search").val();
+        //    //    if (str == "") {
+        //    //        divAcct.style.display = "none";
+        //    //    }
+        //    //    else {
+        //    //        $(".friends .friend_holder").each(function (index) {
+        //    //            if ($(this).attr("id")) {
+        //    //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+        //    //                    $(this).fadeOut("fast");
+        //    //                } else {
+        //    //                    $(this).fadeIn("slow");
+        //    //                }
+        //    //                divAcct.style.display = "block";
+        //    //            }
+        //    //        });
+        //    //    }
 
-            //});
-            SpeakName();
-            //$(".search").focus(function () {
-            //    var str = $(".search").val();
-            //    if (str == "") {
-            //        divAcct.style.display = "none";
-            //    }
-            //    else {
-            //        $(".friends .friend_holder").each(function (index) {
-            //            if ($(this).attr("id")) {
-            //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
-            //                    $(this).fadeOut("fast");
-            //                } else {
-            //                    $(this).fadeIn("slow");
-            //                }
-            //                divAcct.style.display = "block";
-            //            }
-            //        });
-            //    }
+        //    //});
+        //    SpeakName();
+        //    //$(".search").focus(function () {
+        //    //    var str = $(".search").val();
+        //    //    if (str == "") {
+        //    //        divAcct.style.display = "none";
+        //    //    }
+        //    //    else {
+        //    //        $(".friends .friend_holder").each(function (index) {
+        //    //            if ($(this).attr("id")) {
+        //    //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+        //    //                    $(this).fadeOut("fast");
+        //    //                } else {
+        //    //                    $(this).fadeIn("slow");
+        //    //                }
+        //    //                divAcct.style.display = "block";
+        //    //            }
+        //    //        });
+        //    //    }
 
-            //});
-        });
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-19096935-1']);
-        _gaq.push(['_trackPageview']);
+        //    //});
+        //});
+        //var _gaq = _gaq || [];
+        //_gaq.push(['_setAccount', 'UA-19096935-1']);
+        //_gaq.push(['_trackPageview']);
 
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        //(function () {
+        //    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        //    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        //    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        //})();
         function ClickGo()
         {
             var divAcct = document.getElementById("frndsList");
             var str = $(".search").val();
-                //if (str == "") {
-                //    divAcct.style.display = "none";
-                //
-                //else {
+                if (str == "") {
+                    divAcct.style.display = "none";
+                }
+                else {
                     $(".friends .friend_holder").each(function (index) {
                         if ($(this).attr("id")) {
                             if (!$(this).attr("id").match(new RegExp(str, "i"))) {
@@ -755,7 +755,7 @@
                             divAcct.style.display = "block";
                         }
                     });
-                //}
+                }
         }
     </script>
 </body>

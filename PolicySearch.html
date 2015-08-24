@@ -27,19 +27,19 @@
         }
 
         /*.search-holder {
-                margin: 3px;
-                background: #D5B1CB;
-                border-bottom: 1px solid #C4CDE0;
-                height: 50px;
-            }*/
+                    margin: 3px;
+                    background: #D5B1CB;
+                    border-bottom: 1px solid #C4CDE0;
+                    height: 50px;
+                }*/
         .search {
             padding: 3%;
             width: 100%;
             margin: 0 0 5px 0;
             border: 1px solid #3f3f3f;
             /*background-color: #222222;*/
-            color: #461438;
-            background-color: #ffffff ;
+            color: #ffffff;
+            background-color: #461438;
         }
 
         .title {
@@ -59,7 +59,7 @@
             width: 100%;
             padding: 0 0 15px 0;
             vertical-align: top;
-            /*color: #ffffff;*/
+            color: #ffffff;
         }
 
             .textbox img {
@@ -68,17 +68,17 @@
 
             .textbox input {
                 /*border: 1px solid #C4CDE0;
-                outline: medium none;
-                padding: 2px;
-                width: 190px;
-                /*font-size: 11px;*/
+                    outline: medium none;
+                    padding: 2px;
+                    width: 190px;
+                    /*font-size: 11px;*/
                 /*height: 22px;*/
                 width: 70%;
                 margin: 0 0 0 10px;
                 border: 1px solid #3f3f3f;
                 vertical-align: top;
                 /*background-color: #222222;*/
-                /*color: #ffffff;*/
+                color: #ffffff;
             }
 
 
@@ -98,7 +98,7 @@
 
             .name a {
                 /*font-size: 12px;
-                    font-weight: bold;*/
+                        font-weight: bold;*/
                 color: #3B5998;
                 cursor: pointer;
                 text-decoration: none;
@@ -141,6 +141,9 @@
             position: relative;
         }
     </style>
+
+
+
 
     <script type="text/javascript">
 
@@ -233,7 +236,7 @@
                                 <div class="title fl">Enter Policy/Number</div>
                                 <div class="textbox fl">
                                     <a href="#" onclick="recognizeSpeech();"><img src="images/icons/black/microphone.png" /></a>
-                                    <input id="search" type="text" name="search" class="search" value="" placeholder="Search For Policies" autocorrect="off" autocapitalize="off" autocomplete="off">
+                                    <input id="search" type="text" name="search" class="search" value="" placeholder="Search For Policies" autocomplete="off">
                                     <a href="#" onclick="ClickGo();"><img src="images/icons/black/GO.png" /></a>
                                 </div>
                             </div>
@@ -486,64 +489,64 @@
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
     <script>
-    $(document).ready(function () {
-        //var divAcct = document.getElementById("frndsList");
-        //$("#btnGO").click(function () {
-        //    var str = $(".search").val();
-        //    if (str == "") {
-        //        divAcct.style.display = "none";
-        //    }
-        //    else {
-        //        $(".friends .friend_holder").each(function (index) {
-        //            if ($(this).attr("id")) {
-        //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
-        //                    $(this).fadeOut("fast");
-        //                } else {
-        //                    $(this).fadeIn("slow");
-        //                }
-        //                divAcct.style.display = "block";
-        //            }
-        //        });
-        //    }
+    //$(document).ready(function () {
+    //    //var divAcct = document.getElementById("frndsList");
+    //    //$("#btnGO").click(function () {
+    //    //    var str = $(".search").val();
+    //    //    if (str == "") {
+    //    //        divAcct.style.display = "none";
+    //    //    }
+    //    //    else {
+    //    //        $(".friends .friend_holder").each(function (index) {
+    //    //            if ($(this).attr("id")) {
+    //    //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+    //    //                    $(this).fadeOut("fast");
+    //    //                } else {
+    //    //                    $(this).fadeIn("slow");
+    //    //                }
+    //    //                divAcct.style.display = "block";
+    //    //            }
+    //    //        });
+    //    //    }
 
-        //});
-        SpeakName();
-        //$(".search").focus(function () {
-        //    var str = $(".search").val();
-        //    if (str == "") {
-        //        divAcct.style.display = "none";
-        //    }
-        //    else {
-        //        $(".friends .friend_holder").each(function (index) {
-        //            if ($(this).attr("id")) {
-        //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
-        //                    $(this).fadeOut("fast");
-        //                } else {
-        //                    $(this).fadeIn("slow");
-        //                }
-        //                divAcct.style.display = "block";
-        //            }
-        //        });
-        //    }
+    //    //});
+    //    SpeakName();
+    //    //$(".search").focus(function () {
+    //    //    var str = $(".search").val();
+    //    //    if (str == "") {
+    //    //        divAcct.style.display = "none";
+    //    //    }
+    //    //    else {
+    //    //        $(".friends .friend_holder").each(function (index) {
+    //    //            if ($(this).attr("id")) {
+    //    //                if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+    //    //                    $(this).fadeOut("fast");
+    //    //                } else {
+    //    //                    $(this).fadeIn("slow");
+    //    //                }
+    //    //                divAcct.style.display = "block";
+    //    //            }
+    //    //        });
+    //    //    }
 
-        //});
-    });
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-19096935-1']);
-    _gaq.push(['_trackPageview']);
+    //    //});
+    //});
+    //var _gaq = _gaq || [];
+    //_gaq.push(['_setAccount', 'UA-19096935-1']);
+    //_gaq.push(['_trackPageview']);
 
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+    //(function () {
+    //    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    //    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    //    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    //})();
     function ClickGo() {
         var divAcct = document.getElementById("frndsList");
         var str = $(".search").val();
-        //if (str == "") {
-        //   divAcct.style.display = "none";
-        //}
-        //else {
+        if (str == "") {
+            divAcct.style.display = "none";
+        }
+        else {
             $(".friends .friend_holder").each(function (index) {
                 if ($(this).attr("id")) {
                     if (!$(this).attr("id").match(new RegExp(str, "i"))) {
@@ -554,7 +557,7 @@
                     divAcct.style.display = "block";
                 }
             });
-        //}
+        }
     }
     </script>
 
