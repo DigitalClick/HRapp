@@ -1,0 +1,224 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+    <title>Digital You</title>
+    <link rel="stylesheet" href="css/framework7.css">
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
+    <script src="js/speech.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        #text {
+            font-size: 80px;
+            letter-spacing: -3px;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            top: 40%;
+        }
+
+        p {
+            font-weight: bold;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+
+        function Loadurl(url) {
+            window.location.replace(url);
+        }
+
+        function LoadName() {
+            $("#lblUserName").text(window.localStorage.getItem("Username"));
+            $("#lblEmployeeName").text(window.localStorage.getItem("Username"));
+            $("#emailId").text(window.localStorage.getItem("Username") + "@company.com");
+        }
+    </script>
+
+
+
+</head>
+<body id="mobile_wrap" onload="LoadName()">
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+        <nav class="list-nav-small">
+            <ul>
+                <li class="user-icon-small"><span id="lblUserName"></span></li>
+                <li class="home-icon-small"><a href="#" onclick="Loadurl('index.html')" class="close-panel">Home</a></li>
+                <!--<li class="about-icon-small"><a href="about.html" class="close-panel">About</a></li>-->
+                <li class="locations-icon-small"><a href="Locations.html" class="close-panel">Locations</a></li>
+                <!--<li class="communities-icon-small"><a href="Communities.html" class="close-panel">Communities</a></li>-->
+                <li class="contact-icon-small"><a href="Contact.html" class="close-panel">Contact</a></li>
+                <li class="quicklink-icon-small"><a href="QuickLink.html" class="close-panel">Quick Links</a></li>
+                <!--<li class="blog-icon-small"><a href="blog.html" class="close-panel">Blog</a></li>
+                <li class="contact-icon-small"><a href="contact.html" class="close-panel">Contact</a></li>
+                <li class="contact-icon-small"><a href="#" onclick="Loadurl('QuickLink.html')" class="close-panel">Quick Links</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Dashboard.html')" class="close-panel">Dashboard</a></li>
+                <li class="dashboard-icon-small"><a href="#" onclick="Loadurl('Maps.html')" class="close-panel">Maps</a></li>-->
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="views">
+
+        <div class="view view-main">
+
+
+            <div class="pages">
+                <div data-page="projects" class="page no-toolbar no-navbar">
+                    <div class="page-content">
+                        <div class="navbarpages">
+                            <div class="navbar_back_link"><a href="#" onclick="Loadurl('QuickLinks.html')"><img src="images/icons/white/back.png" alt="" title="" /></a></div>
+                            <div class="navbar_page_center">Voice</div>
+                            <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
+                        </div>
+                        <div id="pages_maincontent">
+                            <button onclick="captureAudio();">Capture Audio</button> <br>
+                            <h1 id="text">Please allow access to mic.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery.swipebox.js"></script>
+        <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+        <script type="text/javascript" src="js/email.js"></script>
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+        <script type="text/javascript" src="js/my-app.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/json2.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+            // Called when capture operation is finished
+            //
+            function captureSuccess(mediaFiles) {
+
+                var i, len;
+                for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+                    //uploadFile(mediaFiles[i]);
+                    AlertFilename(mediaFiles[i]);
+                    var rec = this.recognition,
+                    self = this
+
+                    rec.continuous = self.options.continuous;
+                    rec.interimResults = self.options.interimResults;
+                    alert(rec.interimResults);
+                }
+            }
+
+            // Called if something bad happens.
+            //
+            function captureError(error) {
+                var msg = 'An error occurred during capture: ' + error.code;
+                navigator.notification.alert(msg, null, 'Uh oh!');
+            }
+
+            // A button will call this function
+            //
+            function captureAudio() {
+                // Launch device audio recording application,
+                // allowing user to capture up to 2 audio clips
+                var text = document.getElementById('text')
+
+                var speech = new Speech({
+                    debugging: true,
+                    continuous: true,
+                    interimResults: true,
+                    autoRestart: true
+                })
+
+                speech
+                    .on('start', function () {
+                        text.innerHTML = 'Come on, talk to me.'
+                    })
+                    .on('end', function () {
+                        text.innerHTML = 'Stopped listening.'
+                    })
+                    .on('interimResult', function (msg) {
+                        text.innerHTML = msg
+                    })
+                    .on('finalResult', function (msg) {
+                        text.innerHTML = msg
+                    })
+                    .start()
+                navigator.device.capture.captureAudio(captureSuccess, captureError, { limit: 2 });
+
+            }
+
+            // Upload files to server
+            function uploadFile(mediaFile) {
+                var ft = new FileTransfer(),
+                    path = mediaFile.fullPath,
+                    name = mediaFile.name;
+
+                ft.upload(path,
+                    "http://my.domain.com/upload.php",
+                    function (result) {
+                        console.log('Upload success: ' + result.responseCode);
+                        console.log(result.bytesSent + ' bytes sent');
+                    },
+                    function (error) {
+                        console.log('Error uploading file ' + path + ': ' + error.code);
+                    },
+                    { fileName: name });
+            }
+            function AlertFilename(mediaFile) {
+                alert(mediaFile);
+            }
+
+        </script>
+        <script type="text/javascript">
+            var text = document.getElementById('text')
+
+            var speech = new Speech({
+                debugging: true,
+                continuous: true,
+                interimResults: true,
+                autoRestart: false
+            })
+
+            speech
+                .on('start', function () {
+                    text.innerHTML = 'Come on, talk to me.'
+                })
+                .on('end', function () {
+                    text.innerHTML = 'Stopped listening.'
+                })
+                .on('interimResult', function (msg) {
+                    text.innerHTML = msg
+                })
+                .on('finalResult', function (msg) {
+                    text.innerHTML = msg
+                })
+                .start()
+
+        </script>
+</body>
+</html>
+
+
