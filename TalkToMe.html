@@ -741,10 +741,10 @@
         {
             var divAcct = document.getElementById("frndsList");
             var str = $(".search").val();
-                if (str == "") {
-                    divAcct.style.display = "none";
-                }
-                else {
+                //if (str == "") {
+                //    divAcct.style.display = "none";
+                //
+                //else {
                     $(".friends .friend_holder").each(function (index) {
                         if ($(this).attr("id")) {
                             if (!$(this).attr("id").match(new RegExp(str, "i"))) {
@@ -755,7 +755,7 @@
                             divAcct.style.display = "block";
                         }
                     });
-                }
+                //}
         }
     </script>
 </body>
