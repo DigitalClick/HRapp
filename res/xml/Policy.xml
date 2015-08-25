@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CATALOG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CD>
+		<Column1>Employee Attendance Policy</Column1>
+		<Column2>PA001 - Basic Policy</Column2>
+		<Column3>Excellent attendance is an expectation of all employees of Your Company, Inc. Daily attendance is especially important for hourly employees whose customers and coworkers have the expectation of on-time product shipping and delivery.</Column3>
+	</CD>
+	<CD>
+		<Column1>Employee Attendance Policy</Column1>
+		<Column2>PA002 - Attendance Bonus for Hourly Employees</Column2>
+		<Column3>Life events can interfere with work attendance. However, we need employees to use as few emergency personal hours as are necessary and to avoid tardies so that we can operate the business in an orderly and efficient manner.</Column3>
+	</CD>
+	<CD>
+		<Column1>Employee Attendance Policy</Column1>
+		<Column2>PA003 -Family and Medical Leave Act (FMLA)</Column2>
+		<Column3>If you or an immediate family member has a recurring medical condition that results in frequent absences, you may qualify for unpaid leave under the FMLA. Please refer to the separate policy covering FMLA.</Column3>
+	</CD>
+	<CD>
+		<Column1>Employee Attendance Policy</Column1>
+		<Column2>PA004 - Emergency Personal Time</Column2>
+		<Column3>Employees accrue 2.15 hours of emergency personal time per pay period. On an annual basis, this equates to the equivalent of 56 hours. Employees may use emergency personal time up to 56 hours.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PI001 - Software Access Procedure</Column2>
+		<Column3>Software needed, in addition to the Microsoft Office suite of products, must be authorized by your supervisor and downloaded by the IT department. If you need access to software or websites, not currently on the Company network, talk with your supervisor and consult with the IT department.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PI002 - Company Owned Equipment</Column2>
+		<Column3>Any device or computer including, but not limited to, desk phones, cell phones, tablets, laptops, desktop computers, and iPads that the Company provides for your use, should only be used for Company business.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PI003 - Internet use</Column2>
+		<Column3>Internet use, on Company time, is authorized to conduct Company business only. Internet use brings the possibility of breaches to the security of confidential Company information. Internet use also creates the possibility of contamination to our system via viruses or spyware.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PI004 - Social Media</Column2>
+		<Column3>Social media participation from work devices or during working hours, social media content that discriminates against any protected classification including age, race, color, religion, sex, national origin, disability, or genetic information is prohibited. It is our company policy to also recognize sexual preference and weight as qualifying for discrimination protection.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PV001 - Paid Time Off</Column2>
+		<Column3>Each full time employee will accrue PTO bi-weekly in hourly increments based on their length of service as defined below. PTO is added to the employee's PTO bank when the bi-weekly paycheck is issued.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PV002 - Paid Sick Days</Column2>
+		<Column3>Paid sick days are time off from work that an organization voluntarily provides employees as a benefit. The number of paid sick days is often accrued by employees based on years of service to the organization and the level of their position.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PV003 - Paid Vacation Days</Column2>
+		<Column3>Paid vacation days are time off work an organization voluntarily provides employees as a benefit. The number of paid vacation days is generally accrued by employees based on years of service to the organization and the level of their position.</Column3>
+	</CD>
+	<CD>
+		<Column1>Internet and Email Policy</Column1>
+		<Column2>PV004 - Paid Personal Days</Column2>
+		<Column3>Paid personal days are time off from work that an organization voluntarily provides employees as a benefit. The number of paid personal days is often accrued by employees based on years of service to the organization and the level of their position.</Column3>
+	</CD>
+	<CD>
+		<Column1>Vacation Policy</Column1>
+		<Column2>Maternity Eligibility</Column2>
+		<Column3>All women employees are entitled to maternity benefits , provided  if they have worked for a minimum period of 80 days in the Company within 12 months before the expected date of delivery.</Column3>
+	</CD>
+	<CD>
+		<Column1>Vacation Policy</Column1>
+		<Column2>Maximum Maternity</Column2>
+		<Column3>All female employees can avail of 90 days of maternity leave for maximum 2 occasions during their tenure with the Company.</Column3>
+	</CD>
+	<CD>
+		<Column1>Vacation Policy</Column1>
+		<Column2>Miscarriage or premature delivery</Column2>
+		<Column3>In case of miscarriage or premature delivery, upto 45 days of Maternity Leave can be availed of after the event.</Column3>
+	</CD>
+	<CD>
+		<Column1>Vacation Policy</Column1>
+		<Column2>Annual Leave Eligibility</Column2>
+		<Column3>The Act has provided annual/earned leave of 12 working days for all the workers who have worked at least 240 days in a year. An adult worker is entitled to one day of earned leave for every 20 days of service .</Column3>
+	</CD>
+	<CD>
+		<Column1>Vacation Policy</Column1>
+		<Column2>Leave Carryover</Column2>
+		<Column3> Annual leave may be carried over however no more than 30 days can be carried over to the next year. If the employment contract expires before a worker could take annual leave, compensation for leave is made in proportion to the number of months and numbers of hours worked in a week.</Column3>
+	</CD>
+	<CD>
+		<Column1>Vacation Policy</Column1>
+		<Column2>Pay on Public Holidays</Column2>
+		<Column3>Employees are entitled to paid days-off during Festival (public and religious) holidays. These include memorial holidays and religious holidays. There are many festival and religious holidays in India however only three of these are fully covered national public holidays.These are Republic Day (January 26), Independence Day (August 15) and Mahatama Gandhi's Birthday (October 2). </Column3>
+	</CD>
+</CATALOG>
