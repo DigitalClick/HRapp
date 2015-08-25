@@ -261,7 +261,6 @@
 
                             <div id="frndsList" class="friends" style="display:none;">
                                 <div class="page_single">
-
                                     <div class="custom-accordion accordion-list">
 
                                         <div class="friend_holder fl" id="PA001 - Basic Policy">
@@ -546,8 +545,10 @@
             $(".friends .friend_holder").each(function (index) {
                 if ($(this).attr("id")) {
                     if (!$(this).attr("id").match(new RegExp(str, "i"))) {
+                        alert("fade out fast -" + $(this).attr("id"));
                         $(this).fadeOut("fast");
                     } else {
+                        alert("fade in slow -" + $(this).attr("id"));
                         $(this).fadeIn("slow");
                     }
                     divAcct.style.display = "block";

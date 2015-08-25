@@ -942,7 +942,7 @@ ul.icons_4row li {
     right: 0;
     bottom: 0px;
     overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+    /*-webkit-overflow-scrolling: touch;*/
 }
 
 .minimal_intro {
